@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — bannière X</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <style>
+      /* la photo de profil recouvre le bas à gauche : le message vit au centre-droit */
+      .stage { --glow-at: 62% 50%; --glow-size: 55% 90%; }
+      h1 { left: 540px; top: 70px; font-size: 112px; width: 560px; }
+      .lead { left: 544px; top: 300px; width: 520px; font-size: 25px; }
+      .c1 { left: 1120px; top: 70px; transform: rotate(-6deg); }
+      .c2 { left: 1180px; top: 270px; transform: rotate(5deg); }
+      .c3 { left: 60px; top: -60px; transform: rotate(7deg); }
+      .c4 { left: 200px; top: 150px; transform: rotate(-4deg); }
+      .shield { left: 1380px; top: 330px; width: 104px; filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.7)); }
+    </style>
+  </head>
+  <body>
+    <div class="stage"></div>
+    <div class="abs notif dim c3" data-sms="3" style="--u: 1.1px"></div>
+    <div class="abs notif dim c4" data-sms="5" style="--u: 1.1px"></div>
+    <div class="abs notif hit c1" data-sms="0" data-chip="Faux domaine" style="--u: 1.12px"></div>
+    <div class="abs notif hit c2" data-sms="1" data-chip="Créé il y a 3 jours" style="--u: 1.05px"></div>
+    <img class="abs shield" src="../../../logo/virio-symbole-plein.svg" alt="" />
+    <h1 class="abs slam">Un clic suffit.</h1>
+    <p class="abs lead">Virio bloque les faux sites avant que vous ne donniez votre carte. Extension Chrome gratuite.</p>
+    <script src="../kit.js"></script>
+  </body>
+</html>

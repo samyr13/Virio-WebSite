@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — l'arnaque en 4 écrans</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=block" rel="stylesheet" />
+    <!-- les écrans viennent tels quels de la feuille de style du site -->
+    <link rel="stylesheet" href="../../../../css/style.css" />
+    <style>
+      html, body { width: 1600px; height: 900px; overflow: hidden; background: transparent; }
+      .card {
+        position: absolute; inset: 0; border-radius: 36px; overflow: hidden;
+        background: radial-gradient(70% 70% at 50% 45%, #131a28 0%, rgba(11, 14, 20, 0) 75%), #07090d;
+      }
+      .row { position: absolute; left: 70px; right: 70px; top: 64px; display: flex; justify-content: space-between; }
+      .step { width: 330px; display: flex; flex-direction: column; align-items: center; }
+      .phone { --pw: 300px; --k: 0.7138; }
+      .phone .face-front { transform: none; box-shadow: 0 40px 70px -30px rgba(0, 0, 0, 0.9); }
+      figcaption { margin-top: 34px; text-align: center; font-family: "Inter", sans-serif; }
+      figcaption b { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; font-size: 17px; font-weight: 800; background: #3a1418; color: #ff7a7d; }
+      figcaption.ok b { background: #123b27; color: #2bc97a; }
+      figcaption span { display: block; margin-top: 12px; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; color: #f2f4f8; }
+      .scr { opacity: 1 !important; transform: none !important; }
+      .sms-ring { opacity: 1; }
+      .lock-stack .notif { margin-bottom: 0; }
+      .sheet { transform: none; }
+      .dim { opacity: 0.6; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="row">
+        <!-- 1. le SMS arrive -->
+        <figure class="step">
+          <div class="phone"><div class="face face-front"><div class="bezel"><div class="screen"><div class="screen-inner">
+            <div class="scr scr-lock">
+              <div class="status light"><span>14:32</span></div>
+              <div class="lock-date">mardi 21 octobre</div>
+              <div class="lock-time">14:32</div>
+              <div class="lock-stack">
+                <div class="notif" data-sms="0"></div>
+                <div class="notif" data-sms="1" data-time="il y a 2 min"></div>
+                <div class="notif" data-sms="2" data-time="il y a 5 min"></div>
+              </div>
+              <div class="lock-bottom"></div>
+            </div>
+            <div class="island"></div>
+          </div><div class="glare"></div></div></div></div></div>
+          <figcaption><b>1</b><span>Le SMS arrive</span></figcaption>
+        </figure>
+
+        <!-- 2. il a l'air vrai -->
+        <figure class="step">
+          <div class="phone"><div class="face face-front"><div class="bezel"><div class="screen"><div class="screen-inner">
+            <div class="scr scr-sms">
+              <div class="status"><span>14:32</span></div>
+              <div class="sms-head"><div class="sms-avatar">AI</div><div class="sms-name">AMENDES-INFO</div></div>
+              <div class="sms-meta">SMS · Aujourd'hui 14:32</div>
+              <div class="sms-bubble">Amende impayée : 35 €. Majoration à 375 € sous 24 h. Payez ici :
+                <span class="lnk">antai-paiement-gouv.com<i class="sms-ring"></i></span></div>
+              <div class="sms-input">SMS</div>
+            </div>
+            <div class="island"></div>
+          </div><div class="glare"></div></div></div></div></div>
+          <figcaption><b>2</b><span>Il a l'air vrai</span></figcaption>
+        </figure>
+
+        <!-- 3. le faux site demande la carte -->
+        <figure class="step">
+          <div class="phone"><div class="face face-front"><div class="bezel"><div class="screen"><div class="screen-inner">
+            <div class="scr scr-fake">
+              <div class="status"><span>14:33</span></div>
+              <div class="browser"><div class="addr"><i data-ic="lock"></i><span>antai-paiement-gouv.com</span></div></div>
+              <div class="page">
+                <div class="tricolor"><i></i><i></i><i></i></div>
+                <div class="fk-org"><div class="fk-flag"><i></i><i></i><i></i></div><div><b>SERVICE DES AMENDES</b><span>Paiement en ligne</span></div></div>
+                <div class="fk-title">Régularisez votre amende</div>
+                <div class="fk-box"><small>Avis n° 25-4877-31</small><div><span>Montant à payer</span><b>35,00 €</b></div></div>
+                <div class="fk-urgent">Majoration à 375 € dans <span class="mono">00:14:58</span></div>
+                <div class="fk-label">Numéro de carte</div>
+                <div class="fk-field is-focus">4970 1234 5678 1234</div>
+                <div class="fk-row" style="margin-top: 10px"><div class="fk-field">MM / AA</div><div class="fk-field">CVC</div></div>
+                <div class="fk-pay">Payer 35,00 €</div>
+              </div>
+            </div>
+            <div class="island"></div>
+          </div><div class="glare"></div></div></div></div></div>
+          <figcaption><b>3</b><span>Le faux site prend la carte</span></figcaption>
+        </figure>
+
+        <!-- 4. Virio bloque -->
+        <figure class="step">
+          <div class="phone"><div class="face face-front"><div class="bezel"><div class="screen"><div class="screen-inner">
+            <div class="scr scr-fake">
+              <div class="browser"><div class="addr"><i data-ic="lock"></i><span>antai-paiement-gouv.com</span></div></div>
+            </div>
+            <div class="dim"></div>
+            <div class="sheet">
+              <div class="sheet-head"><img src="../../../logo/virio-symbole.svg" alt="" style="width: 30px" /><div><b>Virio</b><span>Protection active</span></div></div>
+              <div class="pill-threat">ARNAQUE DÉTECTÉE</div>
+              <div class="sheet-title">Site frauduleux<br />bloqué</div>
+              <div class="risk"><div class="risk-top">Niveau de risque<span class="mono">97 %</span></div><div class="risk-bar"><i></i></div></div>
+              <ul class="reasons">
+                <li><i data-ic="cross"></i>Imite un service de l'État</li>
+                <li><i data-ic="cross"></i>Domaine créé il y a 2 jours</li>
+                <li><i data-ic="cross"></i>Demande votre carte bancaire</li>
+              </ul>
+              <div class="compare">
+                <div><s>antai-paiement-gouv.com</s><small class="threat">Faux</small></div>
+                <div><span class="ok">antai.gouv.fr</span><small class="safe">Officiel</small></div>
+              </div>
+              <div class="sheet-go" style="display: flex; align-items: center; justify-content: center">Aller sur le site officiel</div>
+            </div>
+            <div class="island"></div>
+          </div><div class="glare"></div></div></div></div></div>
+          <figcaption class="ok"><b>4</b><span>Virio bloque et explique</span></figcaption>
+        </figure>
+      </div>
+    </div>
+    <script src="../kit.js"></script>
+  </body>
+</html>

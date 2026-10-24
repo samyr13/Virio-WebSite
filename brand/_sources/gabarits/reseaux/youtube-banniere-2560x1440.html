@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — bannière YouTube</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <style>
+      /* zone visible partout : 1546 × 423 au centre ; le reste n'apparaît que sur grand écran */
+      .stage { --glow-at: 50% 50%; --glow-size: 40% 45%; }
+      .safe-zone { left: 507px; top: 508px; width: 1546px; height: 423px; display: flex; align-items: center; justify-content: center; gap: 70px; }
+      .safe-zone img { height: 150px; }
+      .safe-zone h1 { font-size: 132px; }
+      .safe-zone p { margin-top: 18px; font-size: 32px; }
+      .c { position: absolute; }
+    </style>
+  </head>
+  <body>
+    <div class="stage"></div>
+    <div class="abs notif hit" data-sms="0" data-chip="Faux domaine" style="--u: 1.6px; left: 150px; top: 120px; transform: rotate(-6deg)"></div>
+    <div class="abs notif dim" data-sms="3" style="--u: 1.5px; left: 760px; top: 60px; transform: rotate(5deg)"></div>
+    <div class="abs notif hit" data-sms="1" data-chip="Créé il y a 3 jours" style="--u: 1.6px; left: 1950px; top: 110px; transform: rotate(6deg)"></div>
+    <div class="abs notif dim" data-sms="6" style="--u: 1.5px; left: 1400px; top: 40px; transform: rotate(-4deg)"></div>
+    <div class="abs notif hit" data-sms="2" data-chip="Demande vos codes" style="--u: 1.6px; left: 120px; top: 1010px; transform: rotate(5deg)"></div>
+    <div class="abs notif dim" data-sms="4" style="--u: 1.5px; left: 820px; top: 1080px; transform: rotate(-5deg)"></div>
+    <div class="abs notif hit" data-sms="5" data-chip="Imite l'État" style="--u: 1.6px; left: 1960px; top: 1000px; transform: rotate(-6deg)"></div>
+    <div class="abs notif dim" data-sms="0" style="--u: 1.5px; left: 1440px; top: 1110px; transform: rotate(4deg)"></div>
+    <div class="abs safe-zone">
+      <img src="../../../logo/virio-symbole.svg" alt="" />
+      <div>
+        <h1 class="slam">Un clic suffit.</h1>
+        <p class="lead">Virio, l'extension Chrome gratuite qui bloque les arnaques.</p>
+      </div>
+    </div>
+    <script src="../kit.js"></script>
+  </body>
+</html>

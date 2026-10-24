@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — story Instagram</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <style>
+      /* zones libres : 250 px en haut et 340 px en bas pour l'interface d'Instagram */
+      .stage { --glow-at: 50% 34%; --glow-size: 90% 45%; }
+      .logo { left: 50%; top: 260px; height: 64px; transform: translateX(-50%); }
+      .pile { left: 0; right: 0; top: 410px; height: 600px; }
+      h1 { left: 80px; right: 80px; top: 1120px; font-size: 150px; text-align: center; }
+      .lead { left: 110px; right: 110px; top: 1330px; text-align: center; font-size: 38px; }
+      .cta { left: 50%; top: 1480px; transform: translateX(-50%); font-size: 30px; }
+    </style>
+  </head>
+  <body>
+    <div class="stage"></div>
+    <img class="abs logo" src="../../../logo/virio-logo-horizontal.svg" alt="Virio" />
+    <div class="abs pile">
+      <div class="abs notif dim" data-sms="3" style="--u: 1.9px; left: 170px; top: 0; transform: rotate(6deg)"></div>
+      <div class="abs notif hit" data-sms="1" data-chip="Créé il y a 3 jours" style="--u: 1.9px; left: 230px; top: 140px; transform: rotate(-5deg)"></div>
+      <div class="abs notif hit" data-sms="0" data-chip="Faux domaine" style="--u: 1.85px; left: 200px; top: 270px; transform: rotate(3deg)"></div>
+    </div>
+    <h1 class="abs slam">Un clic suffit.</h1>
+    <p class="abs lead">Virio bloque le faux site avant que vous ne donniez votre carte.</p>
+    <span class="abs pill pill-safe cta">Gratuit · Bientôt disponible</span>
+    <script src="../kit.js"></script>
+  </body>
+</html>

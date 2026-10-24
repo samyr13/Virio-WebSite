@@ -1,0 +1,8 @@
+# inscriptions « Me prévenir » : des données personnelles, jamais sur GitHub
+data/*.csv
+
+# fichiers locaux
+.claude/
+.impeccable/review/
+brand/_sources/_apercus/
+virio-site-a-envoyer.zip

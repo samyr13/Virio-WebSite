@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — capture Chrome Web Store 1</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <style>
+      .stage { --glow-at: 72% 55%; --glow-size: 60% 80%; }
+      .logo { left: 72px; top: 64px; height: 40px; }
+      h1 { left: 70px; top: 230px; width: 400px; font-size: 60px; }
+      .lead { left: 72px; top: 470px; width: 380px; font-size: 22px; }
+      .win { left: 500px; top: 90px; width: 720px; height: 620px; }
+      .page { position: absolute; inset: 52px 0 0 0; display: grid; place-items: center; background: #0b0e14; }
+    </style>
+  </head>
+  <body>
+    <div class="stage"></div>
+    <img class="abs logo" src="../../../logo/virio-logo-horizontal.svg" alt="Virio" />
+    <h1 class="abs head">Les faux sites sont bloqués.</h1>
+    <p class="abs lead">Avant que vous ne tapiez quoi que ce soit : nom, carte, mot de passe.</p>
+    <div class="browser win">
+      <div class="browser-bar">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="url"><i data-ic="lock"></i><span class="threat">antai-paiement-gouv.com</span></div>
+        <div class="ext"><img src="../../../logo/virio-symbole-plein.svg" alt="" /></div>
+      </div>
+      <div class="page">
+        <div class="block" style="--u: 0.86px">
+          <div class="block-head"><img src="../../../logo/virio-symbole.svg" alt="" /><div><b>Virio</b><span>Protection active</span></div></div>
+          <div class="pill-threat">ARNAQUE DÉTECTÉE</div>
+          <div class="block-title">Site frauduleux bloqué</div>
+          <div class="risk"><div class="risk-top">Niveau de risque<span class="mono">97 %</span></div><div class="risk-bar"><i></i></div></div>
+          <ul class="reasons">
+            <li><i data-ic="cross"></i>Imite un service de l'État</li>
+            <li><i data-ic="cross"></i>Domaine créé il y a 2 jours</li>
+            <li><i data-ic="cross"></i>Demande votre carte bancaire</li>
+          </ul>
+          <div class="go">Aller sur le site officiel</div>
+        </div>
+      </div>
+    </div>
+    <script src="../kit.js"></script>
+  </body>
+</html>

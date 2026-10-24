@@ -1,0 +1,634 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T12:00:00Z",
+  "title": "Design System: Virio",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Encre",
+        "canonical": "#07090d",
+        "tonalRamp": [
+          "#1f242d",
+          "#363e4e",
+          "#4d596f",
+          "#647390",
+          "#8490a9",
+          "#a5aec0",
+          "#c9ced9",
+          "#f0f1f5"
+        ]
+      },
+      "stage": {
+        "role": "neutral",
+        "displayName": "Scène",
+        "canonical": "#0b0e14",
+        "tonalRamp": [
+          "#20242d",
+          "#373e4e",
+          "#4e596f",
+          "#657390",
+          "#8490a9",
+          "#a5aec0",
+          "#c9ced9",
+          "#f0f2f4"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#121722",
+        "tonalRamp": [
+          "#1f242d",
+          "#363e4f",
+          "#4d5870",
+          "#647291",
+          "#838faa",
+          "#a4adc1",
+          "#c9ceda",
+          "#f0f1f5"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Surface 2",
+        "canonical": "#19202d",
+        "tonalRamp": [
+          "#20242d",
+          "#373f4e",
+          "#4e596f",
+          "#65748f",
+          "#8591a8",
+          "#a5afc0",
+          "#c9cfd9",
+          "#f0f2f4"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Filet",
+        "canonical": "#252d3b",
+        "tonalRamp": [
+          "#21252c",
+          "#39404b",
+          "#515b6b",
+          "#6a768b",
+          "#8893a5",
+          "#a8b0bd",
+          "#cbcfd7",
+          "#f0f2f4"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Texte",
+        "canonical": "#f2f4f8",
+        "tonalRamp": [
+          "#1f242d",
+          "#363e4e",
+          "#4d596f",
+          "#647390",
+          "#8490a9",
+          "#a5aec0",
+          "#c9ced9",
+          "#f0f1f5"
+        ]
+      },
+      "text-2": {
+        "role": "neutral",
+        "displayName": "Texte 2",
+        "canonical": "#b9c0cc",
+        "tonalRamp": [
+          "#23252a",
+          "#3c4149",
+          "#555c67",
+          "#6f7786",
+          "#8d94a0",
+          "#abb1ba",
+          "#cdd0d5",
+          "#f1f2f3"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Atténué",
+        "canonical": "#8c96a8",
+        "tonalRamp": [
+          "#232529",
+          "#3d4148",
+          "#575c66",
+          "#707785",
+          "#8e949f",
+          "#acb1b9",
+          "#cdd0d5",
+          "#f1f2f3"
+        ]
+      },
+      "safe": {
+        "role": "primary",
+        "displayName": "Vert Protection",
+        "canonical": "#2bc97a",
+        "tonalRamp": [
+          "#0d3f26",
+          "#176d42",
+          "#219b5e",
+          "#2bca7a",
+          "#53da96",
+          "#81e4b2",
+          "#b3efd1",
+          "#eafbf2"
+        ]
+      },
+      "safe-ink": {
+        "role": "primary",
+        "displayName": "Encre Verte",
+        "canonical": "#06140c",
+        "tonalRamp": [
+          "#123b23",
+          "#1f663d",
+          "#2c9157",
+          "#38bc71",
+          "#5ecf8e",
+          "#89dcad",
+          "#b8eace",
+          "#ebf9f1"
+        ]
+      },
+      "threat": {
+        "role": "secondary",
+        "displayName": "Rouge Arnaque",
+        "canonical": "#e5484d",
+        "tonalRamp": [
+          "#430a0b",
+          "#741014",
+          "#a5171c",
+          "#d61e24",
+          "#e5484d",
+          "#ec797d",
+          "#f4afb1",
+          "#fce9e9"
+        ]
+      },
+      "threat-strong": {
+        "role": "secondary",
+        "displayName": "Rouge Frappe",
+        "canonical": "#c8363b",
+        "tonalRamp": [
+          "#3c1012",
+          "#681c1f",
+          "#95282c",
+          "#c13439",
+          "#d35a5e",
+          "#de878a",
+          "#ebb7b9",
+          "#faebeb"
+        ]
+      },
+      "threat-deep": {
+        "role": "secondary",
+        "displayName": "Rouge Profond",
+        "canonical": "#3a1418",
+        "tonalRamp": [
+          "#311b1d",
+          "#562f33",
+          "#7a4349",
+          "#9e575e",
+          "#b5787e",
+          "#c99ca1",
+          "#dfc4c7",
+          "#f6efef"
+        ]
+      },
+      "threat-text": {
+        "role": "secondary",
+        "displayName": "Rouge Clair",
+        "canonical": "#ff7a7d",
+        "tonalRamp": [
+          "#490405",
+          "#7e0709",
+          "#b3090d",
+          "#e90c11",
+          "#f5383d",
+          "#f76e71",
+          "#faa8aa",
+          "#fee7e7"
+        ]
+      },
+      "page": {
+        "role": "neutral",
+        "displayName": "Page",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#969696",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f2f2f2"
+        ]
+      },
+      "page-text": {
+        "role": "neutral",
+        "displayName": "Texte de page",
+        "canonical": "#161b26",
+        "tonalRamp": [
+          "#20242c",
+          "#383e4d",
+          "#4f596d",
+          "#67738e",
+          "#8690a7",
+          "#a6aebf",
+          "#caced8",
+          "#f0f1f4"
+        ]
+      },
+      "page-muted": {
+        "role": "neutral",
+        "displayName": "Page atténuée",
+        "canonical": "#5b6474",
+        "tonalRamp": [
+          "#232529",
+          "#3d4147",
+          "#585c65",
+          "#727883",
+          "#8f949e",
+          "#adb1b8",
+          "#ced0d4",
+          "#f1f2f3"
+        ]
+      },
+      "page-line": {
+        "role": "neutral",
+        "displayName": "Filet de page",
+        "canonical": "#e3e7ee",
+        "tonalRamp": [
+          "#21252c",
+          "#39404c",
+          "#515b6c",
+          "#68768c",
+          "#8792a6",
+          "#a7afbe",
+          "#cacfd8",
+          "#f0f2f4"
+        ]
+      },
+      "gov-blue": {
+        "role": "tertiary",
+        "displayName": "Bleu État",
+        "canonical": "#1d2f6f",
+        "tonalRamp": [
+          "#101a3d",
+          "#1b2d69",
+          "#273f96",
+          "#3352c2",
+          "#5974d4",
+          "#8699df",
+          "#b6c2ec",
+          "#ebeefa"
+        ]
+      },
+      "gov-red": {
+        "role": "tertiary",
+        "displayName": "Rouge État",
+        "canonical": "#d23a43",
+        "tonalRamp": [
+          "#3e0e11",
+          "#6c191e",
+          "#9a232a",
+          "#c72e37",
+          "#d8555d",
+          "#e38288",
+          "#eeb4b8",
+          "#faeaeb"
+        ]
+      },
+      "sms": {
+        "role": "neutral",
+        "displayName": "Carte SMS",
+        "canonical": "#e9ecf2",
+        "tonalRamp": [
+          "#20242c",
+          "#383f4d",
+          "#50596d",
+          "#68748d",
+          "#8691a7",
+          "#a7afbe",
+          "#cacfd8",
+          "#f0f2f4"
+        ]
+      },
+      "sms-text": {
+        "role": "neutral",
+        "displayName": "Texte SMS",
+        "canonical": "#10131a",
+        "tonalRamp": [
+          "#21242c",
+          "#393f4c",
+          "#51596c",
+          "#69738c",
+          "#8890a5",
+          "#a8aebd",
+          "#cbced8",
+          "#f0f2f4"
+        ]
+      },
+      "sms-meta": {
+        "role": "neutral",
+        "displayName": "Méta SMS",
+        "canonical": "#5a6170",
+        "tonalRamp": [
+          "#242529",
+          "#3e4147",
+          "#585c65",
+          "#727782",
+          "#90949d",
+          "#aeb1b7",
+          "#ced0d4",
+          "#f1f2f3"
+        ]
+      },
+      "link": {
+        "role": "tertiary",
+        "displayName": "Bleu Lien SMS",
+        "canonical": "#1c4ed8",
+        "tonalRamp": [
+          "#091844",
+          "#0f2a75",
+          "#163ca7",
+          "#1c4ed9",
+          "#4671e7",
+          "#7897ed",
+          "#aec1f4",
+          "#e8eefc"
+        ]
+      },
+      "link-bg": {
+        "role": "tertiary",
+        "displayName": "Bleu Lien Pâle",
+        "canonical": "#dce5ff",
+        "tonalRamp": [
+          "#041649",
+          "#07257e",
+          "#0935b3",
+          "#0c45e9",
+          "#3869f5",
+          "#6e91f7",
+          "#a8bdfa",
+          "#e7edfe"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Le H1 « Un clic suffit. » uniquement."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Titres de section et temps du récit épinglé."
+      },
+      "slam": {
+        "displayName": "Slam",
+        "purpose": "Verbes DÉTECTE / BLOQUE / REDIRIGE en majuscules ; même règle pour STOP., 0 € et le nom de clôture."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Chiffres sourcés et compteur en direct, chiffres tabulaires."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Intitulés de la liste des dégâts."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "La phrase sous un titre, 30 à 34ch, en text-2."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texte courant, 36 à 52ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav, sources, notes, en muted."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "URL, domaines, montants, compteurs : ce qui se vérifie."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sms-card",
+        "value": "0 18px 40px -16px rgba(0,0,0,0.55)",
+        "purpose": "Notification SMS au repos."
+      },
+      {
+        "name": "swarm-card",
+        "value": "0 24px 50px -18px rgba(0,0,0,0.7)",
+        "purpose": "SMS flottant autour du téléphone."
+      },
+      {
+        "name": "button-safe",
+        "value": "0 10px 24px -14px rgba(0,0,0,0.7)",
+        "purpose": "Bouton vert au repos."
+      },
+      {
+        "name": "button-safe-hover",
+        "value": "0 14px 28px -14px rgba(0,0,0,0.8)",
+        "purpose": "Bouton vert au survol."
+      },
+      {
+        "name": "floating-panel",
+        "value": "0 30px 60px -30px rgba(0,0,0,0.8)",
+        "purpose": "Mini-feuille de blocage."
+      },
+      {
+        "name": "rising-sheet",
+        "value": "0 -20px 60px rgba(0,0,0,0.5)",
+        "purpose": "Feuille de blocage qui monte dans le téléphone."
+      },
+      {
+        "name": "phone-floor",
+        "value": "radial-gradient(closest-side, rgba(0,0,0,0.75), transparent) + blur(14px)",
+        "purpose": "Ombre au sol sous le téléphone."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Ce qui entre. Équivalent GSAP : expo.out."
+      },
+      {
+        "name": "ease-inout",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "Ce qui se déplace. Équivalent GSAP : power3.inOut."
+      },
+      {
+        "name": "ease-in",
+        "value": "cubic-bezier(0.7, 0, 0.84, 0)",
+        "purpose": "Ce qui sort. Équivalent GSAP : power2.in / power3.in."
+      },
+      {
+        "name": "stop-flash",
+        "value": "0.16s",
+        "purpose": "Flash vert plein cadre STOP."
+      },
+      {
+        "name": "swarm-float",
+        "value": "7s / 8.5s / 6.2s var(--ease-inout) alternate",
+        "purpose": "Flottement des cartes de l'essaim."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "lg",
+        "value": "1100px"
+      },
+      {
+        "name": "md",
+        "value": "860px"
+      },
+      {
+        "name": "sm",
+        "value": "420px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Bouton vert",
+      "kind": "button",
+      "refersTo": "button-safe",
+      "description": "Le seul appel à l'action : être prévenu du lancement.",
+      "html": "<button class=\"ds-btn-safe\">Être prévenu du lancement</button>",
+      "css": ".ds-btn-safe{display:inline-flex;align-items:center;justify-content:center;height:3.25rem;padding:0 1.5rem;border:0;border-radius:999px;background:var(--safe,#2bc97a);color:var(--safe-ink,#06140c);font:700 1rem/1 Inter,system-ui,sans-serif;letter-spacing:-0.01em;cursor:pointer;box-shadow:0 10px 24px -14px rgba(0,0,0,.7);transition:transform .25s cubic-bezier(.16,1,.3,1),background-color .2s cubic-bezier(.16,1,.3,1),box-shadow .25s cubic-bezier(.16,1,.3,1)}.ds-btn-safe:hover{background:#3bd889;transform:translateY(-1px);box-shadow:0 14px 28px -14px rgba(0,0,0,.8)}.ds-btn-safe:active{transform:translateY(1px) scale(.98)}.ds-btn-safe:focus-visible{outline:2px solid var(--safe,#2bc97a);outline-offset:3px}"
+    },
+    {
+      "name": "Lien texte",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Action secondaire, soulignée d'un filet, flèche qui descend.",
+      "html": "<a class=\"ds-text-link\" href=\"#demo\"><span>Essayer la démo</span><svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" aria-hidden=\"true\"><path d=\"M6 1v10M2 7l4 4 4-4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/></svg></a>",
+      "css": ".ds-text-link{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 0;font:600 1rem/1.2 Inter,system-ui,sans-serif;color:var(--text,#f2f4f8);text-decoration:none}.ds-text-link span{background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;padding-bottom:2px}.ds-text-link svg{transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-text-link:hover svg{transform:translateY(3px)}.ds-text-link:focus-visible{outline:2px solid var(--safe,#2bc97a);outline-offset:3px;border-radius:6px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Barre fixe sur l'encre, floutée une fois défilée.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><svg viewBox=\"-14 -14 228 268\" width=\"22\" height=\"26\" aria-hidden=\"true\"><path d=\"M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z\" fill=\"#07090d\" stroke=\"#2bc97a\" stroke-width=\"18\" stroke-linejoin=\"round\"/><rect x=\"80\" y=\"62\" width=\"40\" height=\"112\" rx=\"20\" fill=\"#2bc97a\"/></svg>Virio</a><ul><li><a href=\"#\">La démo</a></li><li><a href=\"#\">Les chiffres</a></li><li><a href=\"#\">Les signes</a></li></ul><a class=\"ds-nav-btn\" href=\"#\">Être prévenu</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:2rem;height:4.25rem;padding:0 1.5rem;background:rgba(7,9,13,.82);backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid rgba(37,45,59,.7);font-family:Inter,system-ui,sans-serif}.ds-brand{display:inline-flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.1875rem;letter-spacing:-.02em;color:var(--text,#f2f4f8);text-decoration:none}.ds-nav ul{display:flex;gap:1.75rem;margin:0 0 0 auto;padding:0;list-style:none}.ds-nav ul a{font-size:.9375rem;font-weight:500;color:var(--muted,#8c96a8);text-decoration:none;transition:color .2s cubic-bezier(.16,1,.3,1)}.ds-nav ul a:hover{color:var(--text,#f2f4f8)}.ds-nav-btn{display:inline-flex;align-items:center;height:2.5rem;padding:0 1.1rem;border-radius:999px;background:var(--safe,#2bc97a);color:var(--safe-ink,#06140c);font-weight:700;font-size:.9375rem;text-decoration:none}.ds-nav a:focus-visible{outline:2px solid var(--safe,#2bc97a);outline-offset:3px;border-radius:6px}"
+    },
+    {
+      "name": "Carte SMS",
+      "kind": "card",
+      "refersTo": "sms-card",
+      "description": "Notification iOS fidèle, avec le lien piégé en mono.",
+      "html": "<div class=\"ds-notif\"><div class=\"ds-notif-head\"><span class=\"ds-app\"></span>Messages<time>maintenant</time></div><div class=\"ds-notif-from\">AMENDES-INFO</div><div class=\"ds-notif-body\">Amende impayée : 35 €. Payez ici :</div><span class=\"ds-notif-link\">antai-paiement-gouv.com</span></div>",
+      "css": ".ds-notif{max-width:300px;border-radius:22px;background:rgba(233,236,242,.96);color:var(--sms-text,#10131a);padding:12px 15px 14px;font-family:Inter,system-ui,sans-serif;box-shadow:0 18px 40px -16px rgba(0,0,0,.55)}.ds-notif-head{display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--sms-meta,#5a6170)}.ds-app{width:19px;height:19px;border-radius:5px;background:#34c759}.ds-notif-head time{margin-left:auto;font-weight:500;letter-spacing:0;text-transform:none}.ds-notif-from{font-size:15px;font-weight:800;margin-top:6px;letter-spacing:-.01em}.ds-notif-body{font-size:14.5px;line-height:1.32;margin-top:1px;color:#20242e}.ds-notif-link{display:inline-block;margin-top:7px;padding:4px 10px;border-radius:999px;background:var(--link-bg,#dce5ff);color:var(--link,#1c4ed8);font:500 12.5px/1.35 'JetBrains Mono',ui-monospace,monospace;text-decoration:underline;text-underline-offset:2px}"
+    },
+    {
+      "name": "Pastille de frappe",
+      "kind": "chip",
+      "refersTo": "strike-chip",
+      "description": "Ce que Virio a repéré sur une carte piégée, ancré sur son bord gauche.",
+      "html": "<div class=\"ds-strike-wrap\"><span class=\"ds-strike\"><svg viewBox=\"0 0 14 14\" width=\"14\" height=\"14\" aria-hidden=\"true\"><circle cx=\"7\" cy=\"7\" r=\"7\" fill=\"#fff\"/><path d=\"M4.6 4.6l4.8 4.8M9.4 4.6 4.6 9.4\" stroke=\"#c8363b\" stroke-width=\"1.6\" stroke-linecap=\"round\"/></svg>Faux domaine</span><div class=\"ds-strike-card\">antai-paiement-gouv.com</div></div>",
+      "css": ".ds-strike-wrap{position:relative;display:inline-block;padding:14px 0 0 10px}.ds-strike-card{padding:14px 16px;border-radius:22px;background:#e9ecf2;color:#10131a;outline:2.5px solid var(--threat,#e5484d);font:500 12.5px 'JetBrains Mono',ui-monospace,monospace}.ds-strike{position:absolute;left:0;top:2px;display:inline-flex;align-items:center;gap:5px;padding:5px 10px 5px 6px;border-radius:999px;background:var(--threat-strong,#c8363b);color:#fff;font:700 11.5px/1 Inter,system-ui,sans-serif;white-space:nowrap;box-shadow:0 6px 14px -6px rgba(0,0,0,.6)}"
+    },
+    {
+      "name": "Interrupteur de démo",
+      "kind": "custom",
+      "refersTo": "switch",
+      "description": "Active ou coupe Virio dans la démo ; vert seulement à l'état actif.",
+      "html": "<button class=\"ds-switch\" role=\"switch\" aria-checked=\"true\"><span class=\"ds-switch-mark\"><svg viewBox=\"-14 -14 228 268\" width=\"30\" height=\"36\" aria-hidden=\"true\"><path d=\"M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z\" fill=\"#121722\" stroke=\"currentColor\" stroke-width=\"18\" stroke-linejoin=\"round\"/><rect x=\"80\" y=\"62\" width=\"40\" height=\"112\" rx=\"20\" fill=\"currentColor\"/></svg></span><span class=\"ds-switch-text\"><b>Virio activé</b><span>Protection au moment du clic</span></span><span class=\"ds-switch-track\"></span></button>",
+      "css": ".ds-switch{display:flex;align-items:center;gap:1.1rem;width:100%;max-width:27rem;padding:1rem 1.25rem 1rem 1rem;border-radius:20px;border:1px solid var(--line,#252d3b);background:var(--surface,#121722);color:var(--text,#f2f4f8);font-family:Inter,system-ui,sans-serif;text-align:left;cursor:pointer;transition:border-color .3s cubic-bezier(.16,1,.3,1),background-color .3s cubic-bezier(.16,1,.3,1)}.ds-switch:hover{border-color:#34405a}.ds-switch:focus-visible{outline:2px solid var(--safe,#2bc97a);outline-offset:3px}.ds-switch-mark{display:flex;color:var(--muted,#8c96a8)}.ds-switch-text b{display:block;font-size:1.0625rem;font-weight:700}.ds-switch-text span{display:block;font-size:.875rem;color:var(--muted,#8c96a8)}.ds-switch-track{position:relative;width:58px;height:34px;margin-left:auto;flex:none;border-radius:999px;background:#2a3242;transition:background-color .3s cubic-bezier(.16,1,.3,1)}.ds-switch-track::after{content:'';position:absolute;left:3px;top:3px;width:28px;height:28px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.35);transition:transform .35s cubic-bezier(.16,1,.3,1)}.ds-switch[aria-checked=true]{border-color:rgba(43,201,122,.45);background:linear-gradient(rgba(43,201,122,.06),rgba(43,201,122,.06)),var(--surface,#121722)}.ds-switch[aria-checked=true] .ds-switch-mark{color:var(--safe,#2bc97a)}.ds-switch[aria-checked=true] .ds-switch-track{background:var(--safe,#2bc97a)}.ds-switch[aria-checked=true] .ds-switch-track::after{transform:translateX(24px)}"
+    },
+    {
+      "name": "Champ e-mail",
+      "kind": "input",
+      "refersTo": "notify-field",
+      "description": "Pilule de saisie avec le bouton vert intégré.",
+      "html": "<form class=\"ds-notify\" onsubmit=\"return false\"><input type=\"email\" placeholder=\"vous@exemple.fr\" aria-label=\"Adresse e-mail\"><button>Être prévenu</button></form>",
+      "css": ".ds-notify{display:flex;gap:.5rem;max-width:30rem;padding:.4rem;border-radius:999px;border:1px solid var(--line,#252d3b);background:var(--surface,#121722);transition:border-color .25s cubic-bezier(.16,1,.3,1)}.ds-notify:focus-within{border-color:rgba(43,201,122,.6)}.ds-notify input{flex:1;min-width:0;border:0;background:transparent;color:var(--text,#f2f4f8);font:500 1rem/1 Inter,system-ui,sans-serif;padding:0 1rem;outline:none;caret-color:var(--safe,#2bc97a)}.ds-notify input::placeholder{color:#7c8699}.ds-notify button{height:2.75rem;padding:0 1.25rem;border:0;border-radius:999px;background:var(--safe,#2bc97a);color:var(--safe-ink,#06140c);font:700 1rem/1 Inter,system-ui,sans-serif;cursor:pointer}.ds-notify button:hover{background:#3bd889}.ds-notify button:focus-visible{outline:2px solid var(--safe,#2bc97a);outline-offset:3px}"
+    },
+    {
+      "name": "Feuille de blocage",
+      "kind": "custom",
+      "refersTo": "block-sheet",
+      "description": "L'écran de Virio qui bloque le faux site et explique pourquoi.",
+      "html": "<div class=\"ds-sheet\"><div class=\"ds-pill-threat\">ARNAQUE DÉTECTÉE</div><div class=\"ds-sheet-title\">Site frauduleux bloqué</div><div class=\"ds-risk\"><i></i></div><div class=\"ds-compare\"><s>antai-paiement-gouv.com</s><span>antai.gouv.fr</span></div><button class=\"ds-sheet-go\">Aller sur le site officiel</button></div>",
+      "css": ".ds-sheet{max-width:22rem;padding:1.25rem;border-radius:22px;border:1px solid var(--line,#252d3b);background:var(--surface,#121722);color:var(--text,#f2f4f8);font-family:Inter,system-ui,sans-serif;box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}.ds-pill-threat{display:inline-block;padding:5px 10px;border-radius:999px;background:var(--threat-deep,#3a1418);color:var(--threat-text,#ff7a7d);font-size:11px;font-weight:700;letter-spacing:.1em}.ds-sheet-title{margin-top:10px;font-size:1.6rem;font-weight:800;letter-spacing:-.035em;line-height:1.04}.ds-risk{height:6px;margin-top:16px;border-radius:3px;background:var(--surface-2,#19202d);overflow:hidden}.ds-risk i{display:block;height:100%;width:97%;background:var(--threat,#e5484d);border-radius:3px}.ds-compare{margin-top:16px;border-radius:14px;background:var(--ink,#07090d);border:1px solid var(--line,#252d3b);padding:0 14px;font:500 13px/44px 'JetBrains Mono',ui-monospace,monospace}.ds-compare s{display:block;color:var(--threat,#e5484d);border-bottom:1px solid var(--line,#252d3b)}.ds-compare span{display:block;color:var(--safe,#2bc97a)}.ds-sheet-go{margin-top:16px;width:100%;height:50px;border:0;border-radius:13px;background:var(--safe,#2bc97a);color:var(--safe-ink,#06140c);font:800 16px/1 Inter,system-ui,sans-serif;cursor:pointer}.ds-sheet-go:focus-visible{outline:2px solid var(--safe,#2bc97a);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Le film qui se laisse toucher",
+    "overview": "Virio reprend le monde de son film de marque (projet Remotion `mon-video`, v3) et le rend manipulable : un fond d'encre presque noir, légèrement relevé au centre comme sous un projecteur, un téléphone en acier construit en CSS 3D, et autour de lui de vrais SMS d'arnaque, gris clair, à la manière d'iOS. La page ne décrit pas la protection, elle la met en scène : on voit le piège arriver, le faux site s'ouvrir, puis Virio l'arrêter.\n\nLe système repose sur un contraste moral plus que décoratif. L'encre et les gris acier portent tout le reste ; le vert n'apparaît que là où Virio agit, le rouge que sur ce qui appartient à l'escroc. Les objets « du monde réel » (cartes SMS, pages web blanches, bandeau tricolore du faux site officiel, barre d'adresse) gardent leurs propres couleurs et leur propre typographie d'interface, parce que leur réalisme est l'argument.\n\nLa densité est celle d'un film : peu de mots, des titres qui claquent en Inter très gras à -0.04em, de grands vides d'encre, des chiffres en très grand corps. Le mouvement suit les trois courbes du film, une tâche chacune.",
+    "keyCharacteristics": [
+      "Fond d'encre unique, relevé par des halos radiaux bleu nuit derrière l'objet principal, jamais par des dégradés colorés.",
+      "Vert = protection, rouge = arnaque ; aucune autre couleur d'accent sur la scène.",
+      "Objets réalistes (SMS, navigateur, pages web) rendus fidèlement, avec leurs codes iOS.",
+      "Inter 800–900 serré pour les mots qui claquent, JetBrains Mono pour les URL et les montants.",
+      "Un seul objet 3D (le téléphone) qui porte le récit au défilement.",
+      "Marque : bouclier vert à pupille en capsule verticale."
+    ],
+    "rules": [
+      {
+        "name": "The Two Camps Rule",
+        "body": "Le vert n'existe que là où Virio agit ; le rouge que sur ce qui appartient à l'escroc. Test : si on ne peut pas répondre « Virio » ou « l'escroc » à la question « à qui est cet élément ? », il n'a droit ni au vert ni au rouge.",
+        "section": "colors"
+      },
+      {
+        "name": "The Real Objects Keep Their Colors Rule",
+        "body": "Ce qui imite le monde réel (SMS, barre d'adresse, pages web, tricolore) garde ses couleurs d'origine et reste à l'intérieur du téléphone ou des cartes SMS. Ces couleurs ne deviennent jamais des accents de la page.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Halo Rule",
+        "body": "La profondeur de fond vient d'un halo radial bleu nuit (`#121826` vers transparent) derrière l'objet principal. Pas de dégradés multicolores.",
+        "section": "colors"
+      },
+      {
+        "name": "The Slam Rule",
+        "body": "Un titre affiché se compose en Inter 800 ou 900 à -0.04em, interlignage sous 1. Pas de graisse intermédiaire pour un titre, pas d'interlettrage positif.",
+        "section": "typography"
+      },
+      {
+        "name": "The Verify-It Mono Rule",
+        "body": "JetBrains Mono uniquement pour ce qui se vérifie : une adresse, un domaine, un montant, un compteur. Jamais pour décorer un intitulé.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Object Rule",
+        "body": "Un seul objet a un vrai volume 3D par vue : le téléphone. Le reste reste plat ou flotte en cartes.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Soft Black Shadow Rule",
+        "body": "Ombres noires diffuses à rayon négatif uniquement ; pas d'ombre décalée nette, pas d'ombre colorée.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** réserver `safe` aux éléments où Virio agit et `threat` aux éléments de l'escroc (The Two Camps Rule).",
+      "**Do** poser le texte sur le vert en `safe-ink`, jamais en blanc.",
+      "**Do** composer chaque titre en Inter 800–900 à -0.04em, interlignage sous 1.",
+      "**Do** écrire URL, domaines et montants en JetBrains Mono 500.",
+      "**Do** rendre les objets du monde réel (SMS, navigateur, pages web) avec leurs couleurs et codes iOS d'origine.",
+      "**Do** créer la profondeur avec un halo radial bleu nuit derrière l'objet et des ombres noires diffuses à rayon négatif.",
+      "**Do** animer avec les trois courbes du film : `--ease-out` pour entrer, `--ease-inout` pour déplacer, `--ease-in` pour sortir.",
+      "**Do** séparer les sections par un filet d'1px en `line`, pas par des cadres.",
+      "**Do** garder un chemin `prefers-reduced-motion` qui coupe flottements et balayages."
+    ],
+    "donts": [
+      "**Don't** utiliser le vert ou le rouge comme simple décoration, ni le rouge pour signaler une erreur qui ne vient pas de l'escroc.",
+      "**Don't** introduire une troisième couleur d'accent sur la scène d'encre ; les bleus et le tricolore restent dans le téléphone et les cartes SMS.",
+      "**Don't** ajouter un second objet 3D à côté du téléphone.",
+      "**Don't** utiliser d'ombre décalée nette, d'ombre colorée ou de dégradé multicolore.",
+      "**Don't** mettre de la mono sur un intitulé ou un texte de lecture.",
+      "**Don't** composer un titre en graisse moyenne ou avec un interlettrage positif."
+    ]
+  }
+}

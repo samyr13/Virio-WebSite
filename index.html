@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Virio · L'extension gratuite qui bloque les arnaques</title>
+    <meta
+      name="description"
+      content="Faux SMS d'amende, de colis ou de banque : Virio repère le lien piégé et bloque le faux site avant que vous ne donniez votre carte. Extension Chrome gratuite, bientôt disponible."
+    />
+    <meta name="theme-color" content="#07090d" />
+    <meta property="og:title" content="Virio · Un clic suffit." />
+    <meta property="og:description" content="L'extension Chrome gratuite qui bloque les arnaques au moment du clic." />
+    <!-- partage sur les réseaux -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Virio" />
+    <meta property="og:url" content="https://virio.fr/" />
+    <meta property="og:image" content="https://virio.fr/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Virio. Un clic suffit. L'extension Chrome gratuite qui bloque les arnaques au moment du clic." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Virio · Un clic suffit." />
+    <meta name="twitter:description" content="L'extension Chrome gratuite qui bloque les arnaques au moment du clic." />
+    <meta name="twitter:image" content="https://virio.fr/assets/og-image.png" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <!-- icon sprite: one stroke family, authored -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <symbol id="i-mark" viewBox="-10 -10 220 260">
+          <path
+            d="M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z"
+            fill="currentColor"
+            fill-opacity="0.14"
+            stroke="currentColor"
+            stroke-width="16"
+            stroke-linejoin="round"
+          />
+          <rect x="82" y="66" width="36" height="104" rx="18" fill="currentColor" />
+        </symbol>
+        <symbol id="i-mark-solid" viewBox="-10 -10 220 260">
+          <path
+            d="M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z"
+            fill="currentColor"
+          />
+          <rect x="82" y="66" width="36" height="104" rx="18" fill="var(--pupil, #2bc97a)" />
+        </symbol>
+        <symbol id="i-msg" viewBox="0 0 20 20">
+          <rect width="20" height="20" rx="5" fill="#34c759" />
+          <path d="M10 4.6c-3.3 0-5.9 2.1-5.9 4.8 0 1.5.8 2.8 2.1 3.7l-.5 2.3 2.4-1.3c.6.1 1.2.2 1.9.2 3.3 0 5.9-2.2 5.9-4.9S13.3 4.6 10 4.6z" fill="#fff" />
+        </symbol>
+        <symbol id="i-cross" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="11" fill="#3a1418" />
+          <path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#e5484d" stroke-width="2.2" stroke-linecap="round" fill="none" />
+        </symbol>
+        <symbol id="i-x" viewBox="0 0 16 16">
+          <path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" />
+        </symbol>
+        <symbol id="i-tick" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="11" fill="#123b27" />
+          <path d="M7.5 12.4l3 3 6-6.6" stroke="#2bc97a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </symbol>
+        <symbol id="i-check" viewBox="0 0 24 24">
+          <path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </symbol>
+        <symbol id="i-down" viewBox="0 0 16 16">
+          <path d="M8 2.5v10.5M3.5 8.5L8 13l4.5-4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </symbol>
+        <symbol id="i-lock" viewBox="0 0 11 13">
+          <path d="M3 5.5V3.8a2.5 2.5 0 015 0v1.7" stroke="currentColor" stroke-width="1.5" fill="none" />
+          <rect x="0.5" y="5.5" width="10" height="7" rx="1.6" fill="currentColor" />
+        </symbol>
+        <symbol id="i-chev-l" viewBox="0 0 9 15">
+          <path d="M7.5 1.5L1.5 7.5l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        </symbol>
+        <symbol id="i-search" viewBox="0 0 16 16">
+          <circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.8" fill="none" />
+          <path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-signal" viewBox="0 0 18 12">
+          <rect x="0" y="8" width="3" height="4" rx="1" fill="currentColor" />
+          <rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="currentColor" />
+          <rect x="10" y="3" width="3" height="9" rx="1" fill="currentColor" />
+          <rect x="15" y="0" width="3" height="12" rx="1" fill="currentColor" />
+        </symbol>
+        <symbol id="i-wifi" viewBox="0 0 16 12">
+          <path d="M8 11.2l2.3-2.5a3.4 3.4 0 00-4.6 0L8 11.2z" fill="currentColor" />
+          <path d="M3.5 6.6a6.5 6.5 0 019 0M1 3.9a10.2 10.2 0 0114 0" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none" />
+        </symbol>
+        <symbol id="i-bat" viewBox="0 0 27 12">
+          <rect x="0.6" y="0.6" width="22.8" height="10.8" rx="3.2" stroke="currentColor" stroke-opacity="0.45" stroke-width="1.2" fill="none" />
+          <rect x="2.4" y="2.4" width="17" height="7.2" rx="1.8" fill="currentColor" />
+          <path d="M25 4v4c.8-.3 1.3-1.1 1.3-2S25.8 4.3 25 4z" fill="currentColor" fill-opacity="0.45" />
+        </symbol>
+        <symbol id="i-hand" viewBox="0 0 24 24">
+          <path
+            d="M9 11.5V5.2a1.7 1.7 0 013.4 0v5.3m0-1.3a1.7 1.7 0 013.4 0v1.6m0-.6a1.7 1.7 0 013.4 0v3.9c0 3.9-2.7 6.4-6.2 6.4h-.6c-2.1 0-3.6-.9-4.8-2.6l-2.7-4a1.6 1.6 0 012.6-1.9L9 13.5"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+          />
+        </symbol>
+        <symbol id="i-info" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8" fill="none" />
+          <path d="M12 11v5.5M12 7.6v.1" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-card" viewBox="0 0 32 32">
+          <rect x="3" y="7" width="26" height="18" rx="3" stroke="currentColor" stroke-width="2" fill="none" />
+          <path d="M3 12.5h26M8 20h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-id" viewBox="0 0 32 32">
+          <rect x="3" y="6" width="26" height="20" rx="3" stroke="currentColor" stroke-width="2" fill="none" />
+          <circle cx="11.5" cy="14" r="3" stroke="currentColor" stroke-width="2" fill="none" />
+          <path d="M6.8 21.5c.8-2 2.6-3.2 4.7-3.2s3.9 1.2 4.7 3.2M19.5 12.5H25M19.5 17H24" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-people" viewBox="0 0 32 32">
+          <circle cx="12" cy="11" r="4" stroke="currentColor" stroke-width="2" fill="none" />
+          <path d="M4.5 25c.9-4 3.8-6.5 7.5-6.5s6.6 2.5 7.5 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+          <circle cx="22.5" cy="12.5" r="3.2" stroke="currentColor" stroke-width="2" fill="none" />
+          <path d="M21 18.6c3.3-.3 5.8 1.8 6.5 5.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+        </symbol>
+        <symbol id="i-bubble" viewBox="0 0 32 32">
+          <path d="M6 7.5h20a2 2 0 012 2V20a2 2 0 01-2 2H14l-6 4.5V22H6a2 2 0 01-2-2V9.5a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="none" />
+          <path d="M11 15h.1M16 15h.1M21 15h.1" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" />
+        </symbol>
+        <symbol id="i-eye" viewBox="0 0 16 16">
+          <path d="M1.2 8S3.7 3.2 8 3.2 14.8 8 14.8 8 12.3 12.8 8 12.8 1.2 8 1.2 8z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round" />
+          <circle cx="8" cy="8" r="2.2" fill="currentColor" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <a class="skip" href="#main">Aller au contenu</a>
+
+    <header class="nav" data-nav>
+      <div class="wrap nav-in">
+        <a class="brand" href="#top" aria-label="Virio, retour en haut">
+          <svg class="safe" aria-hidden="true"><use href="#i-mark" /></svg>
+          Virio
+        </a>
+        <ul class="nav-links">
+          <li><a href="#demo">La démo</a></li>
+          <li><a href="#chiffres">Les chiffres</a></li>
+          <li><a href="#signes">Les signes</a></li>
+          <li><a href="#gratuit">Gratuit</a></li>
+        </ul>
+        <a class="btn btn-safe btn-sm" href="#prevenu">Être prévenu</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============================================================ scene: the scam happens to the phone while you scroll -->
+      <section class="scene" id="top" aria-label="Une arnaque par SMS, du message au blocage" data-scene>
+        <div class="scene-threat" aria-hidden="true"></div>
+        <div class="scene-flash" aria-hidden="true"><span>STOP.</span></div>
+
+        <div class="scene-grid">
+          <div class="beats">
+            <div class="beat">
+              <h1 class="h-display">Un clic suffit.</h1>
+              <p class="lead">
+                Faux SMS d'amende, de colis ou de banque : Virio repère le lien piégé et bloque le faux site avant que vous ne donniez votre
+                carte.
+              </p>
+              <div class="cta-row">
+                <a class="btn btn-safe" href="#prevenu">Être prévenu du lancement</a>
+                <a class="text-link" href="#demo"><span>Essayer la démo</span><svg width="16" height="16" aria-hidden="true"><use href="#i-down" /></svg></a>
+              </div>
+              <ul class="facts">
+                <li><svg aria-hidden="true"><use href="#i-check" /></svg>Extension Chrome</li>
+                <li><svg aria-hidden="true"><use href="#i-check" /></svg>100 % gratuite</li>
+                <li><svg aria-hidden="true"><use href="#i-check" /></svg>Bientôt disponible</li>
+              </ul>
+            </div>
+
+            <div class="beat">
+              <h2 class="h-section">Ça a l'air vrai.</h2>
+              <p class="lead">
+                Un service connu, un montant précis, une menace de majoration. Et un lien qui ressemble à l'officiel :
+                <span class="mono threat">antai-paiement-gouv.com</span>
+              </p>
+            </div>
+
+            <div class="beat">
+              <h2 class="h-section">Un clic.<br /><span class="threat">Faux site, vraie carte.</span></h2>
+              <p class="lead">La page copie un service de l'État et lance un compte à rebours. Tout est faux, sauf l'argent que vous perdez.</p>
+            </div>
+
+            <div class="beat">
+              <h2 class="h-section">Avec Virio, ça s'arrête là.</h2>
+              <p class="lead">Le faux site est bloqué avant que vous ne tapiez quoi que ce soit, et Virio vous explique pourquoi, en clair.</p>
+            </div>
+
+            <div class="beat">
+              <h2 class="h-section">Retour au vrai site.</h2>
+              <p class="lead">
+                Virio vous propose l'adresse officielle du service imité. Un site de l'État se termine toujours par
+                <span class="mono safe">.gouv.fr</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="stage" aria-hidden="true" data-stage>
+            <div class="floor" data-floor></div>
+            <div class="rig" data-rig>
+              <div class="swarm" data-swarm></div>
+              <div class="phone-move" data-move>
+                <div class="phone" data-phone>
+                  <div class="edge"></div>
+                  <div class="face face-back"></div>
+                  <div class="face face-front">
+                    <div class="bezel">
+                      <div class="screen">
+                        <div class="screen-inner">
+                          <!-- lock screen -->
+                          <div class="scr scr-lock" data-s="lock">
+                            <div class="status light">
+                              <span data-clock>14:32</span>
+                              <span class="icons"><svg viewBox="0 0 18 12"><use href="#i-signal" /></svg><svg viewBox="0 0 16 12"><use href="#i-wifi" /></svg><svg viewBox="0 0 27 12"><use href="#i-bat" /></svg></span>
+                            </div>
+                            <div class="lock-date" data-date>mardi 21 octobre</div>
+                            <div class="lock-time" data-clock>14:32</div>
+                            <div class="lock-stack" data-lock-stack>
+                              <div class="notif">
+                                <div class="notif-head"><svg><use href="#i-msg" /></svg>Messages<time>maintenant</time></div>
+                                <div class="notif-from">AMENDES-INFO</div>
+                                <div class="notif-body">Amende impayée : 35 €. Majoration à 375 € sous 24 h. Payez ici :</div>
+                                <span class="notif-link">antai-paiement-gouv.com</span>
+                              </div>
+                            </div>
+                            <div class="lock-bottom"></div>
+                          </div>
+
+                          <!-- the SMS, opened -->
+                          <div class="scr scr-sms" data-s="sms" style="opacity: 0">
+                            <div class="status"><span data-clock>14:32</span><span class="icons"><svg viewBox="0 0 18 12"><use href="#i-signal" /></svg><svg viewBox="0 0 16 12"><use href="#i-wifi" /></svg><svg viewBox="0 0 27 12"><use href="#i-bat" /></svg></span></div>
+                            <div class="sms-head">
+                              <svg class="sms-back" viewBox="0 0 9 15"><use href="#i-chev-l" /></svg>
+                              <div class="sms-avatar">AI</div>
+                              <div class="sms-name">AMENDES-INFO</div>
+                            </div>
+                            <div class="sms-meta">SMS · Aujourd'hui <span data-clock>14:32</span></div>
+                            <div class="sms-bubble">
+                              Amende impayée : 35 €. Majoration à 375 € sous 24 h. Payez ici :
+                              <span class="lnk">antai-paiement-gouv.com<i class="sms-ring"></i><i class="sms-tap"></i></span>
+                            </div>
+                            <div class="sms-input">SMS</div>
+                          </div>
+
+                          <!-- the fake site -->
+                          <div class="scr scr-fake" data-s="fake" style="transform: translateX(100%)">
+                            <div class="status"><span data-clock>14:32</span><span class="icons"><svg viewBox="0 0 18 12"><use href="#i-signal" /></svg><svg viewBox="0 0 16 12"><use href="#i-wifi" /></svg><svg viewBox="0 0 27 12"><use href="#i-bat" /></svg></span></div>
+                            <div class="browser">
+                              <div class="addr"><svg viewBox="0 0 11 13"><use href="#i-lock" /></svg><span>antai-paiement-gouv.com</span></div>
+                            </div>
+                            <div class="page">
+                              <div class="tricolor fk"><i></i><i></i><i></i></div>
+                              <div class="fk-org fk">
+                                <div class="fk-flag"><i></i><i></i><i></i></div>
+                                <div><b>SERVICE DES AMENDES</b><span>Paiement en ligne</span></div>
+                                <span class="secure"><svg viewBox="0 0 11 13"><use href="#i-lock" /></svg>sécurisé</span>
+                              </div>
+                              <div class="fk-title fk">Régularisez votre amende</div>
+                              <div class="fk-box fk">
+                                <small>Avis n° 25-4877-31</small>
+                                <div><span>Montant à payer</span><b>35,00 €</b></div>
+                              </div>
+                              <div class="fk-urgent fk">Majoration à 375 € dans <span class="mono" data-countdown>00:14:58</span></div>
+                              <div class="fk-label fk">Numéro de carte</div>
+                              <div class="fk-field fk" data-digits><span class="ph">0000 0000 0000 0000</span></div>
+                              <div class="fk-row fk" style="margin-top: 10px">
+                                <div class="fk-field">MM / AA</div>
+                                <div class="fk-field">CVC</div>
+                              </div>
+                              <div class="fk-pay fk">Payer 35,00 €</div>
+                              <div class="fk-foot fk">Paiement 100 % sécurisé · Service officiel</div>
+                            </div>
+                          </div>
+
+                          <div class="dim"></div>
+
+                          <!-- Virio's block sheet -->
+                          <div class="sheet" data-sheet>
+                            <div class="sheet-head sh-a">
+                              <svg class="safe" viewBox="-10 -10 220 260"><use href="#i-mark" /></svg>
+                              <div><b>Virio</b><span>Protection active</span></div>
+                            </div>
+                            <div class="pill-threat sh-a">ARNAQUE DÉTECTÉE</div>
+                            <div class="sheet-title sh-a">Site frauduleux<br />bloqué</div>
+                            <div class="risk sh-a">
+                              <div class="risk-top">Niveau de risque<span class="mono" data-risk>97 %</span></div>
+                              <div class="risk-bar"><i data-risk-bar></i></div>
+                            </div>
+                            <ul class="reasons">
+                              <li class="sh-a"><svg viewBox="0 0 24 24"><use href="#i-cross" /></svg>Imite un service de l'État</li>
+                              <li class="sh-a"><svg viewBox="0 0 24 24"><use href="#i-cross" /></svg>Domaine créé il y a 2 jours</li>
+                              <li class="sh-a"><svg viewBox="0 0 24 24"><use href="#i-cross" /></svg>Demande votre carte bancaire</li>
+                            </ul>
+                            <div class="compare sh-a">
+                              <div><s>antai-paiement-gouv.com</s><small class="threat">Faux</small></div>
+                              <div><span class="ok">antai.gouv.fr</span><small class="safe">Officiel</small></div>
+                            </div>
+                            <div class="sheet-go sh-a" style="display: flex; align-items: center; justify-content: center">Aller sur le site officiel</div>
+                          </div>
+
+                          <!-- STOP frame -->
+                          <div class="scr scr-stop" data-s="stop">
+                            <svg viewBox="-10 -10 220 260" fill="none">
+                              <path
+                                class="stop-draw"
+                                d="M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z"
+                                fill="#06140c"
+                                fill-opacity="0.12"
+                                stroke="#06140c"
+                                stroke-width="16"
+                                stroke-linejoin="round"
+                                stroke-dasharray="700"
+                              />
+                              <rect class="stop-pupil" x="82" y="66" width="36" height="104" rx="18" fill="#06140c" />
+                            </svg>
+                            <b>STOP.</b>
+                          </div>
+
+                          <!-- the official site -->
+                          <div class="scr scr-official" data-s="official" style="z-index: 14; transform: translateX(100%)">
+                            <div class="status"><span data-clock>14:32</span><span class="icons"><svg viewBox="0 0 18 12"><use href="#i-signal" /></svg><svg viewBox="0 0 16 12"><use href="#i-wifi" /></svg><svg viewBox="0 0 27 12"><use href="#i-bat" /></svg></span></div>
+                            <div class="browser">
+                              <div class="addr is-safe"><svg viewBox="0 0 11 13"><use href="#i-lock" /></svg><span>antai.gouv.fr</span></div>
+                            </div>
+                            <div class="page">
+                              <div class="of-head"><b>Site officiel</b><span>Paiement des amendes</span></div>
+                              <div class="of-title">Payer une amende</div>
+                              <div class="of-sub">Munissez-vous de votre avis de contravention.</div>
+                              <div class="fk-label">Numéro de télépaiement</div>
+                              <div class="fk-field"><span class="ph">00 0000 0000 0000</span></div>
+                              <div class="fk-pay">Continuer</div>
+                              <div class="of-tip"><svg viewBox="0 0 24 24"><use href="#i-tick" /></svg><span>Un site de l'État se termine toujours par <b>.gouv.fr</b></span></div>
+                            </div>
+                            <div class="toast">
+                              <svg class="safe" viewBox="-10 -10 220 260"><use href="#i-mark" /></svg>
+                              <div><b>Site officiel vérifié</b><span>Virio vous a mis en sécurité</span></div>
+                            </div>
+                          </div>
+
+                          <div class="island"></div>
+                        </div>
+                        <div class="glare"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="scene-progress" aria-hidden="true"><i data-progress></i></div>
+      </section>
+
+      <!-- ============================================================ demo -->
+      <section class="demo" id="demo" aria-labelledby="demo-title">
+        <div class="wrap demo-grid">
+          <div class="demo-copy">
+            <h2 class="h-section" id="demo-title">À vous d'essayer.</h2>
+            <p class="lead">
+              Voici une boîte de SMS comme la vôtre. Touchez un lien avec Virio, puis sans. C'est une simulation&nbsp;: rien n'est vraiment ouvert.
+            </p>
+          </div>
+
+          <button class="switch" type="button" role="switch" aria-checked="true" data-switch>
+            <svg class="switch-mark" viewBox="-10 -10 220 260" aria-hidden="true"><use href="#i-mark" /></svg>
+            <span class="switch-text">
+              <b>Protection Virio</b>
+              <span data-switch-state>Activée : chaque lien est vérifié</span>
+            </span>
+            <span class="switch-track" aria-hidden="true"></span>
+          </button>
+
+          <div class="demo-result">
+            <div class="outcome" aria-live="polite" data-outcome>
+              <p class="outcome-msg">
+                <svg viewBox="0 0 24 24" aria-hidden="true" style="color: var(--muted)"><use href="#i-hand" /></svg>
+                <span>Touchez un lien bleu dans le téléphone.</span>
+              </p>
+            </div>
+
+            <div class="tally">
+              <div class="is-safe"><b data-tally="blocked">0</b>Arnaques bloquées</div>
+              <div class="is-threat"><b data-tally="trapped">0</b>Pièges tombés</div>
+            </div>
+            <p class="demo-note">Les messages et les adresses sont des exemples. Aucune donnée n'est saisie ni envoyée.</p>
+          </div>
+
+          <div class="demo-stage" data-demo-stage>
+            <div class="floor"></div>
+            <div class="rig" data-demo-rig>
+              <div class="phone-move">
+                <div class="phone" data-phone data-demo-phone>
+                  <div class="edge"></div>
+                  <div class="face face-back"></div>
+                  <div class="face face-front">
+                    <div class="bezel">
+                      <div class="screen">
+                        <div class="screen-inner" data-demo-screen></div>
+                        <div class="glare"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ figures -->
+      <section class="figures" id="chiffres" aria-labelledby="fig-title">
+        <div class="wrap">
+          <div class="figures-head">
+            <h2 class="h-section" id="fig-title">L'arnaque est devenue une industrie.</h2>
+            <p class="lead">Fini les messages bourrés de fautes. Les arnaques d'aujourd'hui ont des équipes, des scripts et des faux sites impeccables.</p>
+          </div>
+
+          <div class="counter">
+            <p class="counter-label"><span class="live-dot" aria-hidden="true"></span>Depuis votre arrivée sur cette page, les arnaques ont coûté dans le monde environ</p>
+            <p class="counter-value" aria-live="off"><span data-live>0</span><span class="cur">$</span></p>
+            <p class="counter-src">
+              Estimation à partir de 1 030 milliards de dollars volés en 12 mois, soit environ 32 660 $ par seconde.
+              <a href="https://gasa.org/knowledge-base/blog/global-state-of-scams-report-2024-1-trillion-stolen-in-12-months-gasa-feedzai" target="_blank" rel="noopener">GASA &amp; Feedzai, 2024</a>
+            </p>
+          </div>
+
+          <div class="ledger">
+            <div>
+              <h3>En France <span>2023 – 2024</span></h3>
+              <ol>
+                <li>
+                  <p class="fig"><span data-count="4.5" data-dec="1">4,5</span><small>Md€</small></p>
+                  <p class="fig-text">de préjudice pour les escroqueries enregistrées par la police et la gendarmerie en 2023. Deux fois plus qu'en 2016.</p>
+                  <p class="fig-src"><a href="https://www.lafinancepourtous.com/2024/07/18/fraudes-aux-moyens-de-paiement-et-escroqueries-en-hausse-de-64-entre-2016-et-2023/" target="_blank" rel="noopener">SSMSI, ministère de l'Intérieur, 2024</a></p>
+                </li>
+                <li>
+                  <p class="fig"><span data-count="411700">411 700</span></p>
+                  <p class="fig-text">victimes d'escroqueries et de fraudes aux moyens de paiement enregistrées en 2023.</p>
+                  <p class="fig-src"><a href="https://www.lafinancepourtous.com/2024/07/18/fraudes-aux-moyens-de-paiement-et-escroqueries-en-hausse-de-64-entre-2016-et-2023/" target="_blank" rel="noopener">SSMSI, ministère de l'Intérieur, 2024</a></p>
+                </li>
+                <li>
+                  <p class="fig"><span data-count="382">382</span><small>M€</small></p>
+                  <p class="fig-text">de fraude obtenue en manipulant la victime pour qu'elle valide elle-même le paiement, en 2024. Un tiers de la fraude aux moyens de paiement.</p>
+                  <p class="fig-src"><a href="https://www.banque-france.fr/fr/publications-et-statistiques/publications/rapport-de-lobservatoire-de-la-securite-des-moyens-de-paiement-2024" target="_blank" rel="noopener">Banque de France, rapport OSMP 2024</a></p>
+                </li>
+                <li>
+                  <p class="fig"><span data-count="34">34</span><small>%</small></p>
+                  <p class="fig-text">des demandes d'aide des particuliers concernent l'hameçonnage. C'est la première menace, en hausse de 23 % en un an.</p>
+                  <p class="fig-src"><a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/rapport-activite-2024" target="_blank" rel="noopener">Cybermalveillance.gouv.fr, rapport 2024</a></p>
+                </li>
+              </ol>
+            </div>
+            <div>
+              <h3>Dans le monde <span>2024</span></h3>
+              <ol>
+                <li>
+                  <p class="fig"><span data-count="1030">1 030</span><small>Md$</small></p>
+                  <p class="fig-text">volés par des arnaques en 12 mois. Près d'une personne sur deux reçoit une tentative chaque semaine.</p>
+                  <p class="fig-src"><a href="https://gasa.org/knowledge-base/blog/global-state-of-scams-report-2024-1-trillion-stolen-in-12-months-gasa-feedzai" target="_blank" rel="noopener">GASA &amp; Feedzai, Global State of Scams 2024</a></p>
+                </li>
+                <li>
+                  <p class="fig"><span data-count="4">4</span><small>%</small></p>
+                  <p class="fig-text">des victimes seulement récupèrent leur argent. Une fois payé, c'est presque toujours perdu.</p>
+                  <p class="fig-src"><a href="https://gasa.org/knowledge-base/blog/global-state-of-scams-report-2024-1-trillion-stolen-in-12-months-gasa-feedzai" target="_blank" rel="noopener">GASA &amp; Feedzai, Global State of Scams 2024</a></p>
+                </li>
+                <li>
+                  <p class="fig"><span data-count="16.6" data-dec="1">16,6</span><small>Md$</small></p>
+                  <p class="fig-text">de pertes déclarées au FBI en 2024, +33 % en un an. L'hameçonnage est la plainte la plus fréquente.</p>
+                  <p class="fig-src"><a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank" rel="noopener">FBI, Internet Crime Report 2024</a></p>
+                </li>
+                <li>
+                  <p class="fig"><span data-count="24">24</span><small>h</small></p>
+                  <p class="fig-text">Près de la moitié des arnaques sont bouclées en moins de 24 heures, du premier message au paiement.</p>
+                  <p class="fig-src"><a href="https://gasa.org/knowledge-base/blog/global-state-of-scams-report-2024-1-trillion-stolen-in-12-months-gasa-feedzai" target="_blank" rel="noopener">GASA &amp; Feedzai, Global State of Scams 2024</a></p>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ damage -->
+      <section class="damage" aria-labelledby="dmg-title">
+        <div class="wrap">
+          <h2 class="h-section" id="dmg-title">Et ça ne s'arrête pas à l'argent.</h2>
+          <ul class="damage-list">
+            <li>
+              <h3>Le compte vidé.</h3>
+              <div>
+                <p>Une carte tapée sur un faux site peut être débitée dans la foulée, souvent avant que vous ne compreniez ce qui s'est passé.</p>
+              </div>
+            </li>
+            <li>
+              <h3>L'identité réutilisée.</h3>
+              <div>
+                <p>Nom, adresse, numéro de téléphone : vos données servent à de nouvelles arnaques, plus crédibles. Les demandes d'aide pour fuite de données ont bondi de 82 % en 2024.</p>
+                <p class="fig-src"><a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/particuliers-cybermalveillances-2024" target="_blank" rel="noopener">Cybermalveillance.gouv.fr, 2024</a></p>
+              </div>
+            </li>
+            <li>
+              <h3>Les plus âgés d'abord.</h3>
+              <div>
+                <p>Aux États-Unis, les plus de 60 ans ont perdu 4,8 milliards de dollars en 2024. Ce sont aussi eux qui déposent le plus de plaintes.</p>
+                <p class="fig-src"><a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank" rel="noopener">FBI, Internet Crime Report 2024</a></p>
+              </div>
+            </li>
+            <li>
+              <h3>La honte, en plus.</h3>
+              <div>
+                <p>Beaucoup de victimes n'osent pas en parler. Pourtant l'arnaque ne vise pas les naïfs : elle vise tout le monde, au mauvais moment.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================ signs -->
+      <section class="signs" id="signes" aria-labelledby="signs-title" data-signs>
+        <div class="wrap">
+          <div class="signs-head">
+            <div>
+              <h2 class="h-section" id="signs-title">Six faux SMS que vous recevrez un jour.</h2>
+              <p class="lead">Ils changent de nom, jamais de méthode : l'urgence, un petit montant, un lien qui ressemble au vrai.</p>
+            </div>
+            <button class="reveal" type="button" aria-pressed="false" data-reveal>
+              <span class="reveal-dot" aria-hidden="true"><svg viewBox="0 0 16 16"><use href="#i-eye" /></svg></span>
+              <span data-reveal-label>Montrer les pièges</span>
+            </button>
+          </div>
+
+          <ul class="sign-grid">
+            <li class="sign">
+              <div class="notif">
+                <div class="notif-head"><svg aria-hidden="true"><use href="#i-msg" /></svg>Messages<time>maintenant</time></div>
+                <div class="notif-from">AMENDES-INFO</div>
+                <div class="notif-body">Amende impayée : 35 €. Majoration à 375 € <span class="flag">sous 24 h</span><em class="tag">Urgence</em>. Payez ici :</div>
+                <span class="notif-link flag">antai-paiement-gouv.com</span><em class="tag">Faux domaine</em>
+              </div>
+              <p class="sign-tip"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg><span><b>Le bon réflexe :</b> une amende se vérifie sur antai.gouv.fr, en tapant l'adresse vous-même.</span></p>
+            </li>
+            <li class="sign">
+              <div class="notif">
+                <div class="notif-head"><svg aria-hidden="true"><use href="#i-msg" /></svg>Messages<time>il y a 5 min</time></div>
+                <div class="notif-from">COLIS</div>
+                <div class="notif-body">Votre colis est bloqué au centre de tri. Frais de réexpédition : <span class="flag">1,99 €</span><em class="tag">Petit montant</em></div>
+                <span class="notif-link flag">suivi-colis-livraison.net</span><em class="tag">Faux domaine</em>
+              </div>
+              <p class="sign-tip"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg><span><b>Le bon réflexe :</b> le petit montant sert à obtenir votre carte. Suivez vos colis depuis l'appli du transporteur.</span></p>
+            </li>
+            <li class="sign">
+              <div class="notif">
+                <div class="notif-head"><svg aria-hidden="true"><use href="#i-msg" /></svg>Messages<time>il y a 12 min</time></div>
+                <div class="notif-from">BANQUE</div>
+                <div class="notif-body">Activité inhabituelle. Votre compte <span class="flag">sera suspendu</span><em class="tag">Menace</em>. Confirmez vos accès :</div>
+                <span class="notif-link flag">secure-banque-verif.com</span><em class="tag">Faux domaine</em>
+              </div>
+              <p class="sign-tip"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg><span><b>Le bon réflexe :</b> votre banque ne vous demande jamais vos codes par SMS. Appelez le numéro au dos de votre carte.</span></p>
+            </li>
+            <li class="sign">
+              <div class="notif">
+                <div class="notif-head"><svg aria-hidden="true"><use href="#i-msg" /></svg>Messages<time>hier</time></div>
+                <div class="notif-from">IMPOTS</div>
+                <div class="notif-body">Un <span class="flag">remboursement de 214 €</span><em class="tag">Appât</em> est en attente. Validez vos coordonnées :</div>
+                <span class="notif-link flag">impots-remboursement.org</span><em class="tag">Pas un .gouv.fr</em>
+              </div>
+              <p class="sign-tip"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg><span><b>Le bon réflexe :</b> les impôts, c'est impots.gouv.fr, depuis votre espace personnel.</span></p>
+            </li>
+            <li class="sign">
+              <div class="notif">
+                <div class="notif-head"><svg aria-hidden="true"><use href="#i-msg" /></svg>Messages<time>hier</time></div>
+                <div class="notif-from">ASSURANCE MALADIE</div>
+                <div class="notif-body">Votre carte Vitale expire. Renouvelez-la <span class="flag">avant ce soir</span><em class="tag">Urgence</em> :</div>
+                <span class="notif-link flag">ameli-carte-vitale.info</span><em class="tag">Faux domaine</em>
+              </div>
+              <p class="sign-tip"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg><span><b>Le bon réflexe :</b> tout se fait depuis votre compte sur ameli.fr, jamais depuis un lien reçu.</span></p>
+            </li>
+            <li class="sign">
+              <div class="notif">
+                <div class="notif-head"><svg aria-hidden="true"><use href="#i-msg" /></svg>Messages<time>lundi</time></div>
+                <div class="notif-from">MON CPF</div>
+                <div class="notif-body">Vos droits CPF <span class="flag">expirent ce soir</span><em class="tag">Urgence</em>. Il vous reste 1 240 € :</div>
+                <span class="notif-link flag">moncompte-cpf-droits.fr</span><em class="tag">Pas un .gouv.fr</em>
+              </div>
+              <p class="sign-tip"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg><span><b>Le bon réflexe :</b> le seul site officiel est moncompteformation.gouv.fr.</span></p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============================================================ how -->
+      <section class="how" id="comment" aria-labelledby="how-title">
+        <div class="wrap">
+          <h2 class="h-section" id="how-title">Ce que fait Virio, en trois mots.</h2>
+          <div class="how-rows">
+            <div class="how-row">
+              <div>
+                <h3 class="how-word">Détecte</h3>
+                <p>Au moment où vous cliquez, Virio regarde l'adresse : imite-t-elle un service connu, depuis quand existe-t-elle, que vous demande la page ?</p>
+              </div>
+              <div class="how-vis" aria-hidden="true">
+                <div style="position: relative">
+                  <div class="scan-url">antai-paiement-gouv.com</div>
+                  <span class="strike chip-tr"><svg viewBox="0 0 16 16"><use href="#i-x" /></svg>Faux domaine</span>
+                  <span class="strike chip-bl"><svg viewBox="0 0 16 16"><use href="#i-x" /></svg>Créé il y a 2 jours</span>
+                </div>
+              </div>
+            </div>
+            <div class="how-row">
+              <div>
+                <h3 class="how-word">Bloque</h3>
+                <p>Le faux site ne s'affiche pas. À la place, un écran clair vous dit ce qui cloche, sans jargon.</p>
+              </div>
+              <div class="how-vis" aria-hidden="true">
+                <div class="mini-sheet" data-mini-sheet>
+                  <div class="sheet-head">
+                    <svg class="safe" viewBox="-10 -10 220 260"><use href="#i-mark" /></svg>
+                    <div><b>Virio</b><span>Protection active</span></div>
+                  </div>
+                  <div class="pill-threat">ARNAQUE DÉTECTÉE</div>
+                  <div class="sheet-title" style="margin-top: 0.6rem">Site frauduleux bloqué</div>
+                  <ul class="reasons" style="margin-top: 1rem">
+                    <li><svg viewBox="0 0 24 24"><use href="#i-cross" /></svg>Imite un service de l'État</li>
+                    <li><svg viewBox="0 0 24 24"><use href="#i-cross" /></svg>Demande votre carte bancaire</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="how-row">
+              <div>
+                <h3 class="how-word">Redirige</h3>
+                <p>Virio vous montre l'adresse officielle du service imité, pour faire la démarche au bon endroit.</p>
+              </div>
+              <div class="how-vis" aria-hidden="true">
+                <div class="morph" data-morph>
+                  <span class="morph-word"><span class="m-keep">antai</span><span class="m-drop bad">-paiement-gouv.com</span><span class="m-add good">.gouv.fr</span></span>
+                  <svg class="morph-tick" viewBox="0 0 24 24"><use href="#i-tick" /></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ free -->
+      <section class="free" id="gratuit" aria-labelledby="free-title">
+        <div class="wrap free-grid">
+          <p class="zero" aria-hidden="true">0<small>€</small></p>
+          <div class="free-copy">
+            <h2 class="h-section" id="free-title">Gratuit. Pour tout le monde.</h2>
+            <p class="lead">Se protéger des arnaques ne devrait rien coûter. Virio est entièrement gratuit. Dès sa sortie, installez-le&nbsp;: c'est tout.</p>
+            <ul class="free-list">
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg>Sans abonnement</li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg>Sans carte bancaire à donner</li>
+              <li><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-check" /></svg>Pour vous et pour vos proches</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ close -->
+      <section class="close" id="prevenu" aria-labelledby="close-title">
+        <div class="wrap">
+          <svg class="close-mark" viewBox="-10 -10 220 260" fill="none" aria-hidden="true" data-close-mark>
+            <path
+              class="cm-fill"
+              d="M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z"
+              fill="#2bc97a"
+              fill-opacity="0.14"
+            />
+            <path
+              class="cm-draw"
+              d="M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z"
+              stroke="#2bc97a"
+              stroke-width="14"
+              stroke-linejoin="round"
+              stroke-dasharray="700"
+            />
+            <rect class="cm-pupil" x="82" y="66" width="36" height="104" rx="18" fill="#2bc97a" />
+          </svg>
+          <h2 class="close-name" id="close-title">Virio</h2>
+          <p class="close-sub">Extension Chrome · Bientôt disponible</p>
+          <p class="lead">Laissez votre e-mail : on vous prévient le jour où Virio sort.</p>
+
+          <form class="notify" action="subscribe.php" method="POST" novalidate data-notify>
+            <p class="hp"><label>Ne pas remplir <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+            <div class="notify-row" data-notify-row>
+              <label class="hp" for="email">Adresse e-mail</label>
+              <input id="email" type="email" name="email" placeholder="votre@email.fr" autocomplete="email" inputmode="email" required aria-describedby="notify-msg" />
+              <button class="btn btn-safe" type="submit" data-notify-btn>Me prévenir</button>
+            </div>
+            <p class="notify-msg" id="notify-msg" role="status" data-notify-msg>Votre adresse sert uniquement à vous prévenir du lancement.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap foot-grid">
+        <div>
+          <a class="brand" href="#top"><svg class="safe" aria-hidden="true"><use href="#i-mark" /></svg>Virio</a>
+          <p>L'extension gratuite qui bloque les arnaques au moment du clic.</p>
+          <p>La démo est une simulation : aucun site réel n'est ouvert et aucune donnée n'est collectée. Les adresses de faux sites sont des exemples.</p>
+          <p>Les services cités (ANTAI, Assurance Maladie, CPF, impôts) ne sont pas liés à Virio.</p>
+          <p>© 2026 Virio</p>
+        </div>
+        <div>
+          <h2>Sources des chiffres</h2>
+          <ol>
+            <li>SSMSI, ministère de l'Intérieur : escroqueries et fraudes aux moyens de paiement 2016-2023 (juillet 2024), via <a href="https://www.lafinancepourtous.com/2024/07/18/fraudes-aux-moyens-de-paiement-et-escroqueries-en-hausse-de-64-entre-2016-et-2023/" target="_blank" rel="noopener">La finance pour tous</a>.</li>
+            <li>Banque de France : <a href="https://www.banque-france.fr/fr/publications-et-statistiques/publications/rapport-de-lobservatoire-de-la-securite-des-moyens-de-paiement-2024" target="_blank" rel="noopener">rapport de l'Observatoire de la sécurité des moyens de paiement 2024</a> (septembre 2025).</li>
+            <li>Cybermalveillance.gouv.fr : <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/rapport-activite-2024" target="_blank" rel="noopener">rapport d'activité 2024</a> et <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/actualites/particuliers-cybermalveillances-2024" target="_blank" rel="noopener">menaces des particuliers 2024</a> (mars 2025).</li>
+            <li>GASA &amp; Feedzai : <a href="https://gasa.org/knowledge-base/blog/global-state-of-scams-report-2024-1-trillion-stolen-in-12-months-gasa-feedzai" target="_blank" rel="noopener">Global State of Scams Report 2024</a> (novembre 2024).</li>
+            <li>FBI : <a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank" rel="noopener">Internet Crime Report 2024</a> (avril 2025).</li>
+          </ol>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

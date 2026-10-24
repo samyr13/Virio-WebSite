@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — grande vignette Chrome Web Store</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <style>
+      .stage { --glow-at: 72% 50%; --glow-size: 55% 90%; }
+      .logo { left: 90px; top: 92px; height: 54px; }
+      h1 { left: 88px; top: 190px; font-size: 112px; width: 640px; }
+      .lead { left: 92px; top: 432px; width: 560px; font-size: 25px; }
+      .sms { left: 760px; top: 70px; transform: rotate(-6deg); }
+      .blk { left: 860px; top: 120px; transform: rotate(2deg) scale(0.86); transform-origin: 0 0; }
+    </style>
+  </head>
+  <body>
+    <div class="stage"></div>
+    <div class="abs notif hit sms" data-sms="0" data-chip="Faux domaine" style="--u: 1.15px"></div>
+    <div class="abs block blk">
+      <div class="block-head"><img src="../../../logo/virio-symbole.svg" alt="" /><div><b>Virio</b><span>Protection active</span></div></div>
+      <div class="pill-threat">ARNAQUE DÉTECTÉE</div>
+      <div class="block-title">Site frauduleux bloqué</div>
+      <div class="risk"><div class="risk-top">Niveau de risque<span class="mono">97 %</span></div><div class="risk-bar"><i></i></div></div>
+      <ul class="reasons">
+        <li><i data-ic="cross"></i>Imite un service de l'État</li>
+        <li><i data-ic="cross"></i>Domaine créé il y a 2 jours</li>
+        <li><i data-ic="cross"></i>Demande votre carte bancaire</li>
+      </ul>
+      <div class="go">Aller sur le site officiel</div>
+    </div>
+    <img class="abs logo" src="../../../logo/virio-logo-horizontal.svg" alt="Virio" />
+    <h1 class="abs slam">Un clic suffit.</h1>
+    <p class="abs lead">L'extension gratuite qui bloque les arnaques au moment du clic.</p>
+    <script src="../kit.js"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — aperçu social du dépôt GitHub</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <style>
+      /* GitHub recadre un peu les bords : tout le message reste à 40 px des côtés */
+      .stage { --glow-at: 76% 50%; --glow-size: 55% 85%; }
+      .logo { left: 80px; top: 72px; height: 50px; }
+      h1 { left: 76px; top: 176px; font-size: 128px; width: 640px; }
+      .lead { left: 80px; top: 440px; width: 560px; font-size: 27px; }
+      .c3 { left: 760px; top: -40px; transform: rotate(6deg); }
+      .c1 { left: 720px; top: 130px; transform: rotate(-5deg); }
+      .c2 { left: 840px; top: 370px; transform: rotate(4deg); }
+      .shield { left: 1090px; top: 420px; width: 130px; filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.7)); }
+    </style>
+  </head>
+  <body>
+    <div class="stage"></div>
+    <div class="abs notif dim c3" data-sms="1" style="--u: 1.3px"></div>
+    <div class="abs notif hit c1" data-sms="0" data-chip="Faux domaine" style="--u: 1.42px"></div>
+    <div class="abs notif hit c2" data-sms="2" data-chip="Demande vos codes" style="--u: 1.28px"></div>
+    <img class="abs shield" src="../../../logo/virio-symbole-plein.svg" alt="" />
+    <img class="abs logo" src="../../../logo/virio-logo-horizontal.svg" alt="Virio" />
+    <h1 class="abs slam">Un clic suffit.</h1>
+    <p class="abs lead">L'extension Chrome gratuite qui bloque les arnaques au moment du clic.</p>
+    <script src="../kit.js"></script>
+  </body>
+</html>

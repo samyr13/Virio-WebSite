@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — capture Chrome Web Store 2</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <style>
+      .stage { --glow-at: 70% 50%; --glow-size: 60% 85%; }
+      .logo { left: 72px; top: 64px; height: 40px; }
+      h1 { left: 70px; top: 230px; width: 400px; font-size: 60px; }
+      .lead { left: 72px; top: 470px; width: 380px; font-size: 22px; }
+      .blk { left: 560px; top: 70px; }
+    </style>
+  </head>
+  <body>
+    <div class="stage"></div>
+    <img class="abs logo" src="../../../logo/virio-logo-horizontal.svg" alt="Virio" />
+    <h1 class="abs head">Virio vous dit pourquoi.</h1>
+    <p class="abs lead">Chaque blocage s'explique en clair, et vous montre la vraie adresse du service imité.</p>
+    <div class="abs block blk" style="--u: 1.12px">
+      <div class="block-head"><img src="../../../logo/virio-symbole.svg" alt="" /><div><b>Virio</b><span>Protection active</span></div></div>
+      <div class="pill-threat">ARNAQUE DÉTECTÉE</div>
+      <div class="block-title">Site frauduleux bloqué</div>
+      <div class="risk"><div class="risk-top">Niveau de risque<span class="mono">97 %</span></div><div class="risk-bar"><i></i></div></div>
+      <ul class="reasons">
+        <li><i data-ic="cross"></i>Imite un service de l'État</li>
+        <li><i data-ic="cross"></i>Domaine créé il y a 2 jours</li>
+        <li><i data-ic="cross"></i>Demande votre carte bancaire</li>
+      </ul>
+      <div class="compare">
+        <div><s>antai-paiement-gouv.com</s><small class="threat">Faux</small></div>
+        <div><span class="ok">antai.gouv.fr</span><small class="safe">Officiel</small></div>
+      </div>
+    </div>
+    <script src="../kit.js"></script>
+  </body>
+</html>

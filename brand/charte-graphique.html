@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Charte graphique Virio</title>
+    <meta name="description" content="Logo, couleurs, typographie, éléments graphiques et ton de voix de Virio." />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #07090d;
+        --stage: #0b0e14;
+        --surface: #121722;
+        --surface-2: #19202d;
+        --line: #252d3b;
+        --text: #f2f4f8;
+        --text-2: #b9c0cc;
+        --muted: #8c96a8;
+        --safe: #2bc97a;
+        --safe-strong: #12965a;
+        --safe-ink: #06140c;
+        --threat: #e5484d;
+        --threat-strong: #c8363b;
+        --threat-deep: #3a1418;
+        --threat-text: #ff7a7d;
+        --link: #1c4ed8;
+        --link-bg: #dce5ff;
+        --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+        --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      * { box-sizing: border-box; }
+      html { background: var(--ink); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; scroll-behavior: smooth; scroll-padding-top: 24px; scrollbar-color: var(--line) var(--ink); }
+      body { margin: 0; font-size: 1.0625rem; line-height: 1.6; }
+      ::selection { background: var(--safe); color: var(--safe-ink); }
+      :focus-visible { outline: 2px solid var(--safe); outline-offset: 3px; border-radius: 6px; }
+      a { color: var(--text); text-underline-offset: 0.22em; text-decoration-thickness: 1px; }
+      h1, h2, h3, p, figure { margin: 0; }
+      img { display: block; max-width: 100%; }
+      .mono { font-family: var(--mono); font-weight: 500; }
+      .safe { color: var(--safe); }
+      .threat { color: var(--threat); }
+
+      /* ---------------------------------------------------------------- en-tête */
+      .top {
+        position: relative;
+        padding: 72px clamp(20px, 6vw, 88px) 64px;
+        border-bottom: 1px solid var(--line);
+        background: radial-gradient(55% 90% at 85% 40%, #131a28 0%, rgba(11, 14, 20, 0) 70%), var(--ink);
+        overflow: hidden;
+      }
+      .top .logo { height: 44px; }
+      .top h1 { margin-top: 56px; font-size: clamp(3rem, 8vw, 6rem); font-weight: 900; letter-spacing: -0.04em; line-height: 0.95; }
+      .top .lead { margin-top: 22px; max-width: 40ch; font-size: clamp(1.125rem, 1.6vw, 1.3rem); color: var(--text-2); }
+      .top .version { margin-top: 18px; font-size: 0.875rem; color: var(--muted); }
+      .quick { margin: 48px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; max-width: 1100px; }
+      .quick li { background: var(--ink); padding: 18px 20px; }
+      .quick small { display: block; font-size: 0.8125rem; color: var(--muted); }
+      .quick b { display: block; margin-top: 4px; font-size: 1rem; font-weight: 700; }
+      .quick .chips { display: flex; gap: 6px; margin-top: 8px; }
+      .quick .chips i { width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--line); }
+
+      /* ---------------------------------------------------------------- mise en page */
+      .layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 6vw, 88px); }
+      .toc { position: sticky; top: 0; align-self: start; padding: 48px 0; max-height: 100vh; overflow: auto; }
+      .toc p { font-size: 0.8125rem; font-weight: 700; color: var(--muted); margin-bottom: 12px; }
+      .toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+      .toc a { display: block; padding: 7px 12px; border-radius: 10px; color: var(--text-2); text-decoration: none; font-size: 0.9375rem; transition: background-color 0.2s var(--ease-out), color 0.2s var(--ease-out); }
+      .toc a:hover, .toc a.is-here { background: var(--surface); color: var(--text); }
+      main { min-width: 0; padding-bottom: 120px; }
+      section { padding-top: 88px; }
+      section > h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; }
+      section > .intro { margin-top: 16px; max-width: 62ch; color: var(--text-2); font-size: 1.125rem; }
+      h3 { margin-top: 56px; font-size: 1.375rem; font-weight: 800; letter-spacing: -0.02em; }
+      h3 + p, .note { margin-top: 10px; max-width: 64ch; color: var(--text-2); }
+      .panel { margin-top: 22px; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+      .panel.pad { padding: 28px; }
+      .grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+      .grid3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+
+      /* ---------------------------------------------------------------- l'idée */
+      .camps { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+      .camp { border-radius: 20px; padding: 28px; }
+      .camp.safe-c { background: var(--safe); color: var(--safe-ink); }
+      .camp.threat-c { background: var(--threat-deep); color: var(--text); border: 1px solid #5a2328; }
+      .camp b { display: block; font-size: 1.75rem; font-weight: 900; letter-spacing: -0.03em; }
+      .camp p { margin-top: 8px; }
+      .camp.threat-c b { color: var(--threat-text); }
+
+      /* ---------------------------------------------------------------- logo */
+      .stagebox { display: grid; place-items: center; min-height: 220px; padding: 40px; }
+      .stagebox.dark { background: var(--ink); }
+      .stagebox.surface { background: var(--surface); }
+      .stagebox.light { background: #fff; }
+      .stagebox.green { background: var(--safe); }
+      .tile { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+      .tile figcaption { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--text-2); background: var(--ink); }
+      .tile figcaption .dl { margin-left: auto; display: flex; gap: 10px; font: 500 0.8rem/1 var(--mono); }
+      .tile figcaption .dl a { color: var(--muted); }
+      .tile figcaption .dl a:hover { color: var(--text); }
+      .construct svg { width: 100%; height: auto; display: block; }
+      .clear { display: grid; place-items: center; padding: 48px 20px; background: var(--ink); }
+      .clear-box { position: relative; padding: 42px; outline: 1px dashed #3d4a60; }
+      .clear-box img { height: 96px; }
+      .clear-box .x { position: absolute; font: 600 13px/1 var(--mono); color: var(--safe); }
+      .clear-box .x.t { top: 14px; left: 50%; transform: translateX(-50%); }
+      .clear-box .x.l { left: 14px; top: 50%; transform: translateY(-50%); }
+      .clear-box .gap-t { position: absolute; left: 50%; top: 0; height: 42px; width: 1px; background: var(--safe); opacity: 0.5; }
+      .sizes { display: flex; align-items: flex-end; gap: 40px; flex-wrap: wrap; padding: 36px 28px; background: var(--ink); }
+      .sizes figure { display: grid; gap: 12px; justify-items: start; }
+      .sizes figcaption { font: 500 0.8rem/1.3 var(--mono); color: var(--muted); }
+      .donts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+      .dont .stagebox { min-height: 170px; padding: 30px; }
+      .dont .stagebox img { height: 52px; }
+      .dont figcaption { color: var(--text) !important; }
+      .dont figcaption svg { width: 18px; height: 18px; color: var(--threat); flex: none; }
+      .busy { background: url("reseaux/og-image-partage-1200x630.png") center / cover; }
+      .fake-word { display: flex; align-items: center; gap: 12px; font-size: 44px; font-weight: 900; letter-spacing: -0.03em; color: var(--safe); }
+      .fake-word img { height: 52px; }
+
+      /* ---------------------------------------------------------------- couleurs */
+      .swatches { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+      .swatch { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--ink); }
+      .swatch .chip { height: 128px; padding: 16px 18px; display: flex; align-items: flex-end; font-weight: 800; font-size: 1.125rem; }
+      .swatch dl { margin: 0; padding: 14px 18px 16px; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 0.875rem; }
+      .swatch dt { color: var(--muted); }
+      .swatch dd { margin: 0; font-family: var(--mono); font-weight: 500; color: var(--text-2); }
+      .swatch p { padding: 0 18px 18px; font-size: 0.9rem; color: var(--text-2); }
+      .small-sw { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .small-sw .chip { height: 84px; font-size: 1rem; }
+      .ratio { margin-top: 22px; display: flex; height: 64px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); }
+      .ratio i { display: grid; place-items: center; font: 600 0.8rem/1 var(--mono); }
+      table { width: 100%; border-collapse: collapse; margin-top: 22px; font-size: 0.9375rem; }
+      th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+      th { font-size: 0.8125rem; font-weight: 700; color: var(--muted); }
+      td .pair { display: inline-flex; align-items: center; justify-content: center; min-width: 56px; height: 32px; padding: 0 10px; border-radius: 8px; font-weight: 700; }
+      td.num { font-family: var(--mono); font-weight: 500; white-space: nowrap; }
+      .ok-c { color: var(--safe); }
+
+      /* ---------------------------------------------------------------- typographie */
+      .spec { border-top: 1px solid var(--line); padding: 26px 0; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; align-items: baseline; }
+      .spec:first-of-type { margin-top: 22px; }
+      .spec small { display: block; font-size: 0.8125rem; color: var(--muted); line-height: 1.5; }
+      .spec small b { display: block; color: var(--text); font-size: 0.9375rem; }
+      .s-display { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 900; letter-spacing: -0.04em; line-height: 0.95; }
+      .s-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.035em; line-height: 1.02; }
+      .s-body { font-size: 1.0625rem; color: var(--text-2); max-width: 52ch; }
+      .s-label { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.1em; color: var(--threat-text); background: var(--threat-deep); padding: 6px 12px; border-radius: 999px; justify-self: start; }
+      .s-mono { font: 500 1.375rem/1.4 var(--mono); }
+
+      /* ---------------------------------------------------------------- éléments */
+      .comp { display: grid; place-items: center; min-height: 260px; padding: 44px 24px; background: radial-gradient(70% 80% at 50% 50%, #131a28 0%, rgba(11, 14, 20, 0) 75%), var(--ink); }
+      .notif { position: relative; width: 320px; max-width: 100%; border-radius: 24px; background: rgba(233, 236, 242, 0.97); color: #10131a; padding: 14px 18px 16px; box-shadow: 0 24px 46px -18px rgba(0, 0, 0, 0.75); font-family: var(--sans); text-align: left; }
+      .notif.hit { outline: 3px solid var(--threat); }
+      .notif-head { display: flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; letter-spacing: 0.06em; color: #5a6170; text-transform: uppercase; }
+      .notif-head svg { width: 20px; height: 20px; }
+      .notif-head time { margin-left: auto; font-weight: 500; letter-spacing: 0; text-transform: none; }
+      .notif-from { font-size: 16px; font-weight: 800; margin-top: 6px; }
+      .notif-body { font-size: 15.5px; line-height: 1.32; color: #20242e; }
+      .notif-link { display: inline-block; margin-top: 8px; padding: 4px 11px; border-radius: 999px; background: var(--link-bg); color: var(--link); font: 500 13.5px/1.35 var(--mono); text-decoration: underline; }
+      .hit .notif-link { box-shadow: inset 0 0 0 2px var(--threat); }
+      .strike { position: absolute; left: -12px; top: -14px; display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px 6px 8px; border-radius: 999px; background: var(--threat-strong); color: #fff; font: 700 13px/1 var(--sans); white-space: nowrap; box-shadow: 0 8px 16px -6px rgba(0, 0, 0, 0.6); }
+      .strike svg { width: 14px; height: 14px; }
+      .block { width: 380px; max-width: 100%; border-radius: 22px; background: var(--surface); border: 1px solid var(--line); padding: 22px; text-align: left; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.85); }
+      .block-head { display: flex; align-items: center; gap: 10px; }
+      .block-head img { width: 28px; }
+      .block-head b { display: block; font-size: 15px; }
+      .block-head span { display: block; font-size: 12px; color: var(--muted); }
+      .pill-threat { display: inline-block; margin-top: 16px; padding: 5px 10px; border-radius: 999px; background: var(--threat-deep); color: var(--threat-text); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; }
+      .block-title { margin-top: 8px; font-size: 28px; font-weight: 800; letter-spacing: -0.035em; line-height: 1.04; }
+      .reasons { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 9px; }
+      .reasons li { display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 600; }
+      .reasons svg { width: 22px; height: 22px; flex: none; }
+      .go { margin-top: 16px; height: 48px; border-radius: 12px; background: var(--safe); color: var(--safe-ink); display: flex; align-items: center; justify-content: center; font-weight: 800; }
+      .cta { display: inline-flex; align-items: center; height: 52px; padding: 0 24px; border-radius: 999px; background: var(--safe); color: var(--safe-ink); font-weight: 700; }
+      .comp-row { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; justify-content: center; }
+      .curves { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+      .curve { border: 1px solid var(--line); border-radius: 18px; padding: 20px; background: var(--ink); }
+      .curve svg { width: 100%; height: auto; display: block; }
+      .curve b { display: block; margin-top: 14px; font-size: 1.0625rem; }
+      .curve code { display: block; margin-top: 4px; font: 500 0.8rem/1.4 var(--mono); color: var(--muted); }
+      .curve p { margin-top: 8px; font-size: 0.9rem; color: var(--text-2); }
+
+      /* ---------------------------------------------------------------- ton */
+      .traits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+      .trait { border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+      .trait b { display: block; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.03em; }
+      .trait p { margin-top: 8px; color: var(--text-2); font-size: 0.95rem; }
+      .trait p span { display: block; color: var(--muted); margin-top: 6px; }
+      .say td:first-child { color: var(--text); }
+      .say td:last-child { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--threat); }
+      .rules { margin: 22px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; max-width: 70ch; }
+      .rules li { display: grid; grid-template-columns: 24px 1fr; gap: 12px; color: var(--text-2); }
+      .rules svg { width: 20px; height: 20px; margin-top: 3px; color: var(--safe); }
+      .rules b { color: var(--text); }
+
+      /* ---------------------------------------------------------------- applications */
+      .apps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+      .app { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; text-decoration: none; background: var(--ink); transition: border-color 0.2s var(--ease-out), transform 0.3s var(--ease-out); }
+      .app:hover { border-color: #3a4560; transform: translateY(-2px); }
+      .app .thumb { aspect-ratio: 16 / 10; display: grid; place-items: center; background: var(--surface); overflow: hidden; }
+      .app .thumb img { width: 100%; height: 100%; object-fit: contain; }
+      .app span { display: block; padding: 10px 14px; font-size: 0.875rem; color: var(--text-2); }
+      .app span small { display: block; font: 500 0.75rem/1.4 var(--mono); color: var(--muted); }
+
+      footer { border-top: 1px solid var(--line); padding: 40px clamp(20px, 6vw, 88px); display: flex; align-items: center; gap: 16px; color: var(--muted); font-size: 0.875rem; }
+      footer img { height: 26px; }
+
+      @media (max-width: 1000px) {
+        .layout { grid-template-columns: minmax(0, 1fr); gap: 0; }
+        .toc { position: sticky; top: 0; z-index: 5; padding: 12px 0; margin: 0 calc(-1 * clamp(20px, 6vw, 88px)); padding-inline: clamp(20px, 6vw, 88px); background: rgba(7, 9, 13, 0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); max-height: none; }
+        .toc p { display: none; }
+        .toc ol { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+        .toc a { white-space: nowrap; }
+        .quick { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .swatches, .apps, .donts, .curves, .traits, .grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .small-sw { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+      @media (max-width: 640px) {
+        .quick, .swatches, .apps, .donts, .curves, .traits, .grid2, .grid3, .camps, .small-sw { grid-template-columns: minmax(0, 1fr); }
+        .spec { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+        table { font-size: 0.875rem; }
+        th, td { padding: 10px 8px; }
+        .clear-box { padding: 28px; }
+        .clear-box img { height: 60px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .app, .toc a { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="i-x" viewBox="0 0 16 16"><path d="M4.5 4.5l7 7M11.5 4.5l-7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" /></symbol>
+      <symbol id="i-cross" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#3a1418" /><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#e5484d" stroke-width="2.2" stroke-linecap="round" fill="none" /></symbol>
+      <symbol id="i-msg" viewBox="0 0 20 20"><rect width="20" height="20" rx="5" fill="#34c759" /><path d="M10 4.6c-3.3 0-5.9 2.1-5.9 4.8 0 1.5.8 2.8 2.1 3.7l-.5 2.3 2.4-1.3c.6.1 1.2.2 1.9.2 3.3 0 5.9-2.2 5.9-4.9S13.3 4.6 10 4.6z" fill="#fff" /></symbol>
+    </svg>
+
+    <header class="top">
+      <img class="logo" src="logo/virio-logo-horizontal.svg" alt="Virio" />
+      <h1>Charte graphique</h1>
+      <p class="lead">Tout ce qu'il faut pour que Virio ait toujours le même visage et la même voix, du site aux réseaux.</p>
+      <p class="version">Version 1.0 · octobre 2026</p>
+      <ul class="quick">
+        <li><small>Couleurs principales</small><b>Encre, vert Virio, rouge arnaque</b><span class="chips"><i style="background: #07090d"></i><i style="background: #2bc97a; border-color: #2bc97a"></i><i style="background: #e5484d; border-color: #e5484d"></i></span></li>
+        <li><small>Polices</small><b>Inter · JetBrains Mono</b></li>
+        <li><small>Ton</small><b>Clair, direct, rassurant</b></li>
+        <li><small>Signature</small><b>« Un clic suffit. »</b></li>
+      </ul>
+    </header>
+
+    <div class="layout">
+      <nav class="toc" aria-label="Sommaire">
+        <p>Sommaire</p>
+        <ol>
+          <li><a href="#idee">L'idée</a></li>
+          <li><a href="#logo">Logo</a></li>
+          <li><a href="#couleurs">Couleurs</a></li>
+          <li><a href="#typographie">Typographie</a></li>
+          <li><a href="#elements">Éléments</a></li>
+          <li><a href="#mouvement">Mouvement</a></li>
+          <li><a href="#ton">Ton</a></li>
+          <li><a href="#applications">Applications</a></li>
+          <li><a href="#fichiers">Fichiers</a></li>
+        </ol>
+      </nav>
+
+      <main>
+        <!-- ============================================================ l'idée -->
+        <section id="idee">
+          <h2>Deux camps, deux couleurs.</h2>
+          <p class="intro">Toute l'identité de Virio raconte un face-à-face : l'escroc d'un côté, la protection de l'autre. Chaque couleur appartient à un camp, et n'en change jamais.</p>
+          <div class="camps">
+            <div class="camp safe-c"><b>Le vert, c'est Virio.</b><p>Il n'apparaît que là où Virio agit : le bouclier, le « STOP. », le bouton qui ramène au site officiel, l'appel à s'inscrire.</p></div>
+            <div class="camp threat-c"><b>Le rouge, c'est l'escroc.</b><p>Il ne marque que ce qui appartient à l'arnaque : le faux domaine, le faux site, les étiquettes « Faux domaine », le niveau de risque.</p></div>
+          </div>
+          <p class="note">Tout le reste vit sur un fond encre presque noir. Les objets du réel gardent leurs vraies couleurs : un SMS reste gris clair, un lien reste bleu, un site de l'État garde son bleu-blanc-rouge.</p>
+        </section>
+
+        <!-- ============================================================ logo -->
+        <section id="logo">
+          <h2>Logo</h2>
+          <p class="intro">Un bouclier, et à l'intérieur une capsule verticale : c'est la forme du lien piégé dans le SMS, devenue la pupille d'un œil qui veille. Virio regarde le lien à votre place.</p>
+
+          <h3>Construction</h3>
+          <div class="panel construct">
+            <svg viewBox="0 0 900 360" role="img" aria-label="Le lien du SMS devient la pupille du bouclier.">
+              <rect width="900" height="360" fill="#07090d" />
+              <g transform="translate(70 128)">
+                <rect width="300" height="56" rx="28" fill="#dce5ff" />
+                <text x="150" y="35" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="17" font-weight="500" fill="#1c4ed8" text-decoration="underline">antai-paiement-gouv.com</text>
+                <text x="0" y="-22" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#8c96a8">Le lien du SMS…</text>
+              </g>
+              <path d="M392 156 H 520" stroke="#3d4a60" stroke-width="2" stroke-dasharray="5 6" />
+              <path d="M512 148 l10 8 -10 8" stroke="#3d4a60" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+              <g transform="translate(580 40) scale(1.15)">
+                <path d="M100 10 L182 40 C186 41.5 188 45 188 49 V112 C188 166 152 204 100 228 C48 204 12 166 12 112 V49 C12 45 14 41.5 18 40 Z" fill="#2bc97a" fill-opacity="0.14" stroke="#2bc97a" stroke-width="16" stroke-linejoin="round" />
+                <rect x="82" y="66" width="36" height="104" rx="18" fill="#2bc97a" />
+              </g>
+              <text x="696" y="340" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="600" fill="#8c96a8">… devient la pupille du bouclier.</text>
+            </svg>
+          </div>
+
+          <h3>Les versions</h3>
+          <p>La version principale vit sur fond encre. Chaque version existe en SVG (à privilégier) et en PNG transparent.</p>
+          <div class="grid2">
+            <figure class="tile"><div class="stagebox dark"><img src="logo/virio-logo-horizontal.svg" alt="Logo horizontal sur fond sombre" style="height: 72px" /></div><figcaption>Horizontal · fond sombre (principal)<span class="dl"><a href="logo/virio-logo-horizontal.svg" download>SVG</a><a href="logo/png/virio-logo-horizontal.png" download>PNG</a></span></figcaption></figure>
+            <figure class="tile"><div class="stagebox light"><img src="logo/virio-logo-horizontal-fond-clair.svg" alt="Logo horizontal sur fond clair" style="height: 72px" /></div><figcaption>Horizontal · fond clair<span class="dl"><a href="logo/virio-logo-horizontal-fond-clair.svg" download>SVG</a><a href="logo/png/virio-logo-horizontal-fond-clair.png" download>PNG</a></span></figcaption></figure>
+            <figure class="tile"><div class="stagebox dark"><img src="logo/virio-logo-vertical.svg" alt="Logo vertical" style="height: 150px" /></div><figcaption>Vertical · formats carrés<span class="dl"><a href="logo/virio-logo-vertical.svg" download>SVG</a><a href="logo/png/virio-logo-vertical.png" download>PNG</a></span></figcaption></figure>
+            <figure class="tile"><div class="stagebox green"><img src="logo/virio-logo-horizontal-noir.svg" alt="Logo noir sur fond vert" style="height: 72px" /></div><figcaption>Noir · sur le vert Virio<span class="dl"><a href="logo/virio-logo-horizontal-noir.svg" download>SVG</a><a href="logo/png/virio-logo-horizontal-noir.png" download>PNG</a></span></figcaption></figure>
+          </div>
+          <div class="grid3">
+            <figure class="tile"><div class="stagebox dark" style="min-height: 180px"><img src="logo/virio-symbole.svg" alt="Symbole" style="height: 96px" /></div><figcaption>Symbole<span class="dl"><a href="logo/virio-symbole.svg" download>SVG</a></span></figcaption></figure>
+            <figure class="tile"><div class="stagebox dark" style="min-height: 180px"><img src="logo/virio-symbole-plein.svg" alt="Symbole plein" style="height: 96px" /></div><figcaption>Symbole plein · petites tailles<span class="dl"><a href="logo/virio-symbole-plein.svg" download>SVG</a></span></figcaption></figure>
+            <figure class="tile"><div class="stagebox surface" style="min-height: 180px"><img src="logo/virio-symbole-blanc.svg" alt="Symbole blanc" style="height: 96px" /></div><figcaption>Symbole blanc · une couleur<span class="dl"><a href="logo/virio-symbole-blanc.svg" download>SVG</a></span></figcaption></figure>
+          </div>
+
+          <h3>Zone de protection</h3>
+          <p>Autour du logo, on laisse toujours un espace vide au moins égal à la hauteur de la pupille (« x »). Aucun texte, bord ni image n'y entre.</p>
+          <div class="panel clear">
+            <div class="clear-box">
+              <span class="gap-t"></span><span class="x t">x</span><span class="x l">x</span>
+              <img src="logo/virio-logo-horizontal.svg" alt="Logo avec sa zone de protection" />
+            </div>
+          </div>
+
+          <h3>Tailles minimales</h3>
+          <p>En dessous de 24 px, le symbole passe en version pleine : le contour fin disparaîtrait à l'écran.</p>
+          <div class="panel sizes">
+            <figure><img src="logo/virio-symbole-plein.svg" alt="" style="height: 16px" /><figcaption>Symbole plein<br />16 px minimum</figcaption></figure>
+            <figure><img src="logo/virio-symbole.svg" alt="" style="height: 24px" /><figcaption>Symbole<br />24 px minimum</figcaption></figure>
+            <figure><img src="logo/virio-logo-horizontal.svg" alt="" style="height: 24px" /><figcaption>Logo horizontal<br />24 px de haut minimum</figcaption></figure>
+            <figure><img src="logo/virio-logo-vertical.svg" alt="" style="height: 64px" /><figcaption>Logo vertical<br />64 px de haut minimum</figcaption></figure>
+          </div>
+
+          <h3>À ne pas faire</h3>
+          <div class="donts">
+            <figure class="tile dont"><div class="stagebox dark"><img src="logo/virio-logo-horizontal.svg" alt="" style="transform: scaleX(1.45)" /></div><figcaption><svg><use href="#i-x" /></svg>Le déformer</figcaption></figure>
+            <figure class="tile dont"><div class="stagebox dark"><img src="logo/virio-logo-horizontal.svg" alt="" style="transform: rotate(-12deg)" /></div><figcaption><svg><use href="#i-x" /></svg>Le faire pivoter</figcaption></figure>
+            <figure class="tile dont"><div class="stagebox dark"><img src="logo/virio-logo-horizontal.svg" alt="" style="filter: hue-rotate(150deg)" /></div><figcaption><svg><use href="#i-x" /></svg>Changer ses couleurs</figcaption></figure>
+            <figure class="tile dont"><div class="stagebox dark"><img src="logo/virio-logo-horizontal.svg" alt="" style="filter: drop-shadow(0 0 14px #2bc97a) drop-shadow(0 0 30px #2bc97a)" /></div><figcaption><svg><use href="#i-x" /></svg>Ajouter une ombre ou une lueur</figcaption></figure>
+            <figure class="tile dont"><div class="stagebox busy"><img src="logo/virio-logo-horizontal.svg" alt="" /></div><figcaption><svg><use href="#i-x" /></svg>Le poser sur un fond chargé</figcaption></figure>
+            <figure class="tile dont"><div class="stagebox dark"><span class="fake-word"><img src="logo/virio-symbole.svg" alt="" />Virio</span></div><figcaption><svg><use href="#i-x" /></svg>Retaper le mot ou le mettre en vert</figcaption></figure>
+          </div>
+        </section>
+
+        <!-- ============================================================ couleurs -->
+        <section id="couleurs">
+          <h2>Couleurs</h2>
+          <p class="intro">Une base encre, du texte clair, et deux couleurs qui ne servent qu'à raconter qui fait quoi.</p>
+
+          <h3>Couleurs principales</h3>
+          <div class="swatches">
+            <div class="swatch"><div class="chip" style="background: #07090d; border-bottom: 1px solid var(--line)">Encre</div><dl><dt>HEX</dt><dd>#07090D</dd><dt>RGB</dt><dd>7 9 13</dd><dt>CSS</dt><dd>--ink</dd></dl><p>Le fond de tout : site, visuels, réseaux.</p></div>
+            <div class="swatch"><div class="chip" style="background: #2bc97a; color: #06140c">Vert Virio</div><dl><dt>HEX</dt><dd>#2BC97A</dd><dt>RGB</dt><dd>43 201 122</dd><dt>CSS</dt><dd>--safe</dd></dl><p>Uniquement là où Virio agit.</p></div>
+            <div class="swatch"><div class="chip" style="background: #e5484d; color: #fff">Rouge arnaque</div><dl><dt>HEX</dt><dd>#E5484D</dd><dt>RGB</dt><dd>229 72 77</dd><dt>CSS</dt><dd>--threat</dd></dl><p>Uniquement sur ce qui appartient à l'escroc.</p></div>
+          </div>
+
+          <h3>Couleurs d'appui</h3>
+          <div class="swatches small-sw">
+            <div class="swatch"><div class="chip" style="background: #121722">Surface</div><dl><dt>HEX</dt><dd>#121722</dd></dl></div>
+            <div class="swatch"><div class="chip" style="background: #252d3b">Ligne</div><dl><dt>HEX</dt><dd>#252D3B</dd></dl></div>
+            <div class="swatch"><div class="chip" style="background: #f2f4f8; color: #07090d">Texte</div><dl><dt>HEX</dt><dd>#F2F4F8</dd></dl></div>
+            <div class="swatch"><div class="chip" style="background: #8c96a8; color: #07090d">Gris</div><dl><dt>HEX</dt><dd>#8C96A8</dd></dl></div>
+            <div class="swatch"><div class="chip" style="background: #12965a">Vert sur clair</div><dl><dt>HEX</dt><dd>#12965A</dd></dl></div>
+            <div class="swatch"><div class="chip" style="background: #06140c">Vert encre</div><dl><dt>HEX</dt><dd>#06140C</dd></dl></div>
+            <div class="swatch"><div class="chip" style="background: #c8363b">Rouge fort</div><dl><dt>HEX</dt><dd>#C8363B</dd></dl></div>
+            <div class="swatch"><div class="chip" style="background: #3a1418; color: #ff7a7d">Rouge profond</div><dl><dt>HEX</dt><dd>#3A1418</dd></dl></div>
+          </div>
+          <p class="note">« Vert sur clair » remplace le vert Virio sur fond blanc. « Vert encre » est le texte posé sur le vert. « Rouge fort » porte les étiquettes blanches, « rouge profond » le fond des badges d'alerte.</p>
+
+          <h3>Les proportions</h3>
+          <p>Un visuel Virio est d'abord sombre. Le vert et le rouge restent des touches : s'ils prennent toute la place, ils ne racontent plus rien. La seule exception est le plan « STOP. », entièrement vert.</p>
+          <div class="ratio" aria-label="Environ 80 % encre, 12 % texte, 5 % vert, 3 % rouge">
+            <i style="flex: 80; background: #07090d; color: var(--muted)">Encre 80 %</i>
+            <i style="flex: 12; background: #f2f4f8; color: #07090d">12 %</i>
+            <i style="flex: 5; background: #2bc97a; color: #06140c">5 %</i>
+            <i style="flex: 3; background: #e5484d"></i>
+          </div>
+
+          <h3>Contrastes vérifiés</h3>
+          <table>
+            <thead><tr><th>Association</th><th>Contraste</th><th>Usage</th></tr></thead>
+            <tbody>
+              <tr><td><span class="pair" style="background: #07090d; color: #f2f4f8; border: 1px solid var(--line)">Aa</span> Texte sur encre</td><td class="num ok-c">18,1 : 1</td><td>Tout le texte</td></tr>
+              <tr><td><span class="pair" style="background: #07090d; color: #8c96a8; border: 1px solid var(--line)">Aa</span> Gris sur encre</td><td class="num ok-c">6,7 : 1</td><td>Légendes, sources</td></tr>
+              <tr><td><span class="pair" style="background: #07090d; color: #2bc97a; border: 1px solid var(--line)">Aa</span> Vert sur encre</td><td class="num ok-c">9,2 : 1</td><td>Mots et icônes de Virio</td></tr>
+              <tr><td><span class="pair" style="background: #2bc97a; color: #06140c">Aa</span> Vert encre sur vert</td><td class="num ok-c">8,7 : 1</td><td>Boutons, plan « STOP. »</td></tr>
+              <tr><td><span class="pair" style="background: #07090d; color: #e5484d; border: 1px solid var(--line)">Aa</span> Rouge sur encre</td><td class="num ok-c">5,1 : 1</td><td>Faux domaines</td></tr>
+              <tr><td><span class="pair" style="background: #c8363b; color: #fff">Aa</span> Blanc sur rouge fort</td><td class="num ok-c">5,2 : 1</td><td>Étiquettes « Faux domaine »</td></tr>
+              <tr><td><span class="pair" style="background: #fff; color: #12965a">Aa</span> Vert sur clair sur blanc</td><td class="num">3,8 : 1</td><td>Logo et grands titres seulement, pas de petit texte</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ============================================================ typographie -->
+        <section id="typographie">
+          <h2>Typographie</h2>
+          <p class="intro">Deux familles gratuites (licence libre OFL). Inter porte la voix, très grasse et serrée pour les titres. JetBrains Mono est réservée à ce qu'on doit pouvoir vérifier : adresses et chiffres.</p>
+          <div class="spec"><small><b>Titre principal</b>Inter Black 900<br />interlettrage −0,04 em</small><p class="s-display">Un clic suffit.</p></div>
+          <div class="spec"><small><b>Titre de section</b>Inter ExtraBold 800<br />interlettrage −0,035 em</small><p class="s-title">Avec Virio, ça s'arrête là.</p></div>
+          <div class="spec"><small><b>Texte</b>Inter Regular 400<br />17 px, interligne 1,55</small><p class="s-body">Le faux site est bloqué avant que vous ne tapiez quoi que ce soit, et Virio vous explique pourquoi, en clair.</p></div>
+          <div class="spec"><small><b>Badge d'interface</b>Inter Bold 700, capitales<br />seulement dans l'interface</small><p class="s-label">ARNAQUE DÉTECTÉE</p></div>
+          <div class="spec"><small><b>Adresses et chiffres</b>JetBrains Mono 500</small><p class="s-mono"><span class="threat" style="text-decoration: line-through">antai-paiement-gouv.com</span><br /><span class="safe">antai.gouv.fr</span></p></div>
+          <p class="note">Les titres ne dépassent jamais −0,04 em d'interlettrage. La hiérarchie vient de la taille et de la graisse, jamais de la couleur seule. Le mono n'est pas un décor « tech ».</p>
+        </section>
+
+        <!-- ============================================================ éléments -->
+        <section id="elements">
+          <h2>Éléments graphiques</h2>
+          <p class="intro">Les mêmes objets reviennent partout, du film au site et aux réseaux. Ils viennent du réel : on montre l'arnaque telle qu'elle arrive.</p>
+
+          <h3>La carte de SMS</h3>
+          <p>Une vraie notification, gris clair, avec son lien bleu. Barrée d'un contour rouge et d'une étiquette quand Virio l'a repérée.</p>
+          <div class="panel comp">
+            <div class="comp-row">
+              <div class="notif">
+                <div class="notif-head"><svg><use href="#i-msg" /></svg>Messages<time>maintenant</time></div>
+                <div class="notif-from">COLIS</div>
+                <div class="notif-body">Votre colis est bloqué. Frais de réexpédition : 1,99 €</div>
+                <span class="notif-link">suivi-colis-livraison.net</span>
+              </div>
+              <div class="notif hit">
+                <div class="notif-head"><svg><use href="#i-msg" /></svg>Messages<time>maintenant</time></div>
+                <div class="notif-from">AMENDES-INFO</div>
+                <div class="notif-body">Amende impayée : 35 €. Payez ici :</div>
+                <span class="notif-link">antai-paiement-gouv.com</span>
+                <span class="strike"><svg><use href="#i-x" /></svg>Faux domaine</span>
+              </div>
+            </div>
+          </div>
+
+          <h3>L'écran de blocage</h3>
+          <p>Le moment où Virio parle. Il dit ce qui se passe, pourquoi, et propose la bonne porte.</p>
+          <div class="panel comp">
+            <div class="comp-row">
+              <div class="block">
+                <div class="block-head"><img src="logo/virio-symbole.svg" alt="" /><div><b>Virio</b><span>Protection active</span></div></div>
+                <span class="pill-threat">ARNAQUE DÉTECTÉE</span>
+                <p class="block-title">Site frauduleux bloqué</p>
+                <ul class="reasons">
+                  <li><svg><use href="#i-cross" /></svg>Imite un service de l'État</li>
+                  <li><svg><use href="#i-cross" /></svg>Domaine créé il y a 2 jours</li>
+                </ul>
+                <div class="go">Aller sur le site officiel</div>
+              </div>
+              <span class="cta">Être prévenu du lancement</span>
+            </div>
+          </div>
+          <p class="note">Le bouton vert est l'unique appel à l'action d'un écran. Les icônes sont dessinées au trait, d'une seule épaisseur ; pas d'émojis à la place des icônes.</p>
+        </section>
+
+        <!-- ============================================================ mouvement -->
+        <section id="mouvement">
+          <h2>Mouvement</h2>
+          <p class="intro">Trois courbes, chacune avec un seul rôle. Les mêmes dans le film et sur le site.</p>
+          <div class="curves">
+            <div class="curve">
+              <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M10 70 C 26 10, 40 10, 110 10" stroke="#2bc97a" stroke-width="3" fill="none" stroke-linecap="round" /><path d="M10 70 H110 M10 70 V10" stroke="#252d3b" stroke-width="1" /></svg>
+              <b>Arrivée</b><code>cubic-bezier(0.16, 1, 0.3, 1)</code><p>Ce qui entre et se pose : textes, cartes, écran de blocage.</p>
+            </div>
+            <div class="curve">
+              <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M10 70 C 75 70, 45 10, 110 10" stroke="#2bc97a" stroke-width="3" fill="none" stroke-linecap="round" /><path d="M10 70 H110 M10 70 V10" stroke="#252d3b" stroke-width="1" /></svg>
+              <b>Caméra</b><code>cubic-bezier(0.65, 0, 0.35, 1)</code><p>Les mouvements du téléphone et les transformations.</p>
+            </div>
+            <div class="curve">
+              <svg viewBox="0 0 120 80" aria-hidden="true"><path d="M10 70 C 80 70, 94.2 70, 110 10" stroke="#2bc97a" stroke-width="3" fill="none" stroke-linecap="round" /><path d="M10 70 H110 M10 70 V10" stroke="#252d3b" stroke-width="1" /></svg>
+              <b>Départ</b><code>cubic-bezier(0.7, 0, 0.84, 0)</code><p>Ce qui sort : toujours plus vite que ce qui entre.</p>
+            </div>
+          </div>
+          <p class="note">Deux moments signent la marque : le plan vert « STOP. » qui coupe l'arnaque, et les faux SMS qui reçoivent leur étiquette rouge puis tombent. Toute animation a une version calme pour les personnes qui réduisent les mouvements.</p>
+        </section>
+
+        <!-- ============================================================ ton -->
+        <section id="ton">
+          <h2>Ton de voix</h2>
+          <p class="intro">Virio parle à tout le monde, au moment où l'on a peur de s'être fait avoir. Il rassure en expliquant, jamais en jargonnant.</p>
+          <div class="traits">
+            <div class="trait"><b>Clair</b><p>Des phrases courtes, des mots de tous les jours.<span>Pas technique, pas savant.</span></p></div>
+            <div class="trait"><b>Direct</b><p>On dit ce qui se passe et ce qu'il faut faire.<span>Pas alarmiste, pas vague.</span></p></div>
+            <div class="trait"><b>Rassurant</b><p>On explique pourquoi, on montre la bonne porte.<span>Pas culpabilisant, pas moralisateur.</span></p></div>
+          </div>
+          <table class="say">
+            <thead><tr><th>On dit</th><th>On évite</th></tr></thead>
+            <tbody>
+              <tr><td>Ce site imite un service de l'État.</td><td>Menace d'hameçonnage de niveau critique détectée.</td></tr>
+              <tr><td>Vous n'avez rien tapé.</td><td>Vous avez failli vous faire avoir !</td></tr>
+              <tr><td>Une amende se vérifie sur antai.gouv.fr, en tapant l'adresse vous-même.</td><td>Ne cliquez jamais sur aucun lien.</td></tr>
+              <tr><td>Virio est entièrement gratuit.</td><td>Protection 100 % garantie contre toutes les arnaques.</td></tr>
+            </tbody>
+          </table>
+          <ul class="rules">
+            <li><svg><use href="#i-check" /></svg><span><b>On vouvoie.</b> Virio s'adresse à tout le monde, de 17 à 87 ans.</span></li>
+            <li><svg><use href="#i-check" /></svg><span><b>Chaque chiffre a sa source.</b> On cite l'organisme et l'année, juste à côté.</span></li>
+            <li><svg><use href="#i-check" /></svg><span><b>On ne promet que ce que Virio fait.</b> Détecter, bloquer, rediriger. Pas de « 100 % de protection ».</span></li>
+            <li><svg><use href="#i-check" /></svg><span><b>L'arnaque ne vise pas les naïfs.</b> Elle vise tout le monde, au mauvais moment. On ne se moque jamais des victimes.</span></li>
+          </ul>
+        </section>
+
+        <!-- ============================================================ applications -->
+        <section id="applications">
+          <h2>Applications</h2>
+          <p class="intro">Les visuels prêts à publier. Cliquez pour ouvrir le fichier en taille réelle.</p>
+          <div class="apps">
+            <a class="app" href="reseaux/og-image-partage-1200x630.png"><div class="thumb"><img src="reseaux/og-image-partage-1200x630.png" alt="" /></div><span>Image de partage du site<small>1200 × 630</small></span></a>
+            <a class="app" href="reseaux/x-twitter-banniere-1500x500.png"><div class="thumb"><img src="reseaux/x-twitter-banniere-1500x500.png" alt="" /></div><span>Bannière X<small>1500 × 500</small></span></a>
+            <a class="app" href="reseaux/linkedin-banniere-1584x396.png"><div class="thumb"><img src="reseaux/linkedin-banniere-1584x396.png" alt="" /></div><span>Bannière LinkedIn<small>1584 × 396</small></span></a>
+            <a class="app" href="reseaux/facebook-couverture-1640x624.png"><div class="thumb"><img src="reseaux/facebook-couverture-1640x624.png" alt="" /></div><span>Couverture Facebook<small>1640 × 624</small></span></a>
+            <a class="app" href="reseaux/youtube-banniere-2560x1440.png"><div class="thumb"><img src="reseaux/youtube-banniere-2560x1440.png" alt="" /></div><span>Bannière YouTube<small>2560 × 1440</small></span></a>
+            <a class="app" href="reseaux/instagram-post-stop-1080x1080.png"><div class="thumb"><img src="reseaux/instagram-post-stop-1080x1080.png" alt="" /></div><span>Post Instagram « STOP. »<small>1080 × 1080</small></span></a>
+            <a class="app" href="reseaux/instagram-post-chiffre-1080x1350.png"><div class="thumb"><img src="reseaux/instagram-post-chiffre-1080x1350.png" alt="" /></div><span>Post Instagram chiffre<small>1080 × 1350</small></span></a>
+            <a class="app" href="reseaux/instagram-post-reflexe-1080x1350.png"><div class="thumb"><img src="reseaux/instagram-post-reflexe-1080x1350.png" alt="" /></div><span>Post Instagram « bon réflexe »<small>1080 × 1350</small></span></a>
+            <a class="app" href="reseaux/instagram-story-1080x1920.png"><div class="thumb"><img src="reseaux/instagram-story-1080x1920.png" alt="" /></div><span>Story Instagram<small>1080 × 1920</small></span></a>
+            <a class="app" href="chrome-web-store/cws-vignette-marquee-1400x560.png"><div class="thumb"><img src="chrome-web-store/cws-vignette-marquee-1400x560.png" alt="" /></div><span>Chrome Web Store · grande vignette<small>1400 × 560</small></span></a>
+            <a class="app" href="chrome-web-store/cws-capture-1-blocage-1280x800.png"><div class="thumb"><img src="chrome-web-store/cws-capture-1-blocage-1280x800.png" alt="" /></div><span>Chrome Web Store · capture<small>1280 × 800</small></span></a>
+            <a class="app" href="icones/png/virio-photo-profil-1024.png"><div class="thumb"><img src="icones/png/virio-photo-profil-1024.png" alt="" style="width: 50%" /></div><span>Photo de profil<small>1024 et 400 px</small></span></a>
+          </div>
+        </section>
+
+        <!-- ============================================================ fichiers -->
+        <section id="fichiers">
+          <h2>Fichiers</h2>
+          <p class="intro">Tout est rangé dans le dossier <span class="mono">brand/</span>, à côté de cette page.</p>
+          <table>
+            <thead><tr><th>Dossier</th><th>Contenu</th></tr></thead>
+            <tbody>
+              <tr><td class="num"><a href="logo/">logo/</a></td><td>Symbole, logos horizontal et vertical en SVG ; PNG transparents dans <span class="mono">logo/png/</span></td></tr>
+              <tr><td class="num"><a href="icones/">icones/</a></td><td>Icônes d'application, photos de profil, icônes de l'extension Chrome (16, 32, 48, 128 px)</td></tr>
+              <tr><td class="num"><a href="reseaux/">reseaux/</a></td><td>Bannières, image de partage, posts et story</td></tr>
+              <tr><td class="num"><a href="chrome-web-store/">chrome-web-store/</a></td><td>Vignettes et captures de la fiche de l'extension (maquettes à remplacer par de vraies captures)</td></tr>
+              <tr><td class="num"><a href="github/">github/</a></td><td>Visuels du README et aperçu social du dépôt</td></tr>
+              <tr><td class="num"><a href="_sources/">_sources/</a></td><td>Gabarits HTML de chaque visuel, polices Inter et scripts de génération</td></tr>
+            </tbody>
+          </table>
+          <p class="note">Pour modifier un visuel : éditer son gabarit dans <span class="mono">_sources/gabarits/</span>, puis lancer <span class="mono">python _sources/render.py</span> depuis le dossier <span class="mono">brand/</span>.</p>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <img src="logo/virio-symbole.svg" alt="" />
+      <span>Virio · Charte graphique v1.0 · Un clic suffit.</span>
+    </footer>
+
+    <script>
+      // surligne la section en cours dans le sommaire
+      const links = [...document.querySelectorAll(".toc a")];
+      const spy = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            links.forEach((a) => a.classList.toggle("is-here", a.getAttribute("href") === `#${e.target.id}`));
+          });
+        },
+        { rootMargin: "-30% 0px -60% 0px" }
+      );
+      document.querySelectorAll("main section").forEach((s) => spy.observe(s));
+    </script>
+  </body>
+</html>

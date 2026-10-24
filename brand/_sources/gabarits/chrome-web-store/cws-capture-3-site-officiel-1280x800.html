@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Virio — capture Chrome Web Store 3</title>
+    <link rel="stylesheet" href="../kit.css" />
+    <style>
+      .stage { --glow-at: 72% 55%; --glow-size: 60% 80%; }
+      .logo { left: 72px; top: 64px; height: 40px; }
+      h1 { left: 70px; top: 230px; width: 400px; font-size: 60px; }
+      .lead { left: 72px; top: 470px; width: 380px; font-size: 22px; }
+      .win { left: 500px; top: 90px; width: 720px; height: 620px; }
+      .url.ok-url { box-shadow: inset 0 0 0 2px var(--safe); color: var(--safe); }
+      .url.ok-url svg { color: var(--safe); }
+      .page { position: absolute; inset: 52px 0 0 0; background: #fff; color: #161b26; padding: 0 44px; }
+      .of-head { margin: 0 -44px; padding: 22px 44px; border-bottom: 2px solid #e3e7ee; }
+      .of-head b { display: block; font-size: 16px; font-weight: 800; color: #1d2f6f; }
+      .of-head span { font-size: 14px; color: #5b6474; }
+      .of-title { margin-top: 36px; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; }
+      .of-sub { margin-top: 10px; font-size: 18px; color: #5b6474; }
+      .field { margin-top: 30px; height: 56px; border: 2px solid #e3e7ee; border-radius: 12px; display: flex; align-items: center; padding: 0 18px; font: 500 18px/1 var(--mono); color: #737b8a; }
+      .btn { margin-top: 18px; height: 58px; border-radius: 12px; background: #1d2f6f; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 700; }
+      .toast { position: absolute; right: 24px; bottom: 24px; display: flex; align-items: center; gap: 14px; padding: 16px 22px; border-radius: 18px; background: var(--surface); color: var(--text); box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.55); }
+      .toast img { width: 30px; }
+      .toast b { display: block; font-size: 17px; }
+      .toast span { display: block; font-size: 13px; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <div class="stage"></div>
+    <img class="abs logo" src="../../../logo/virio-logo-horizontal.svg" alt="Virio" />
+    <h1 class="abs head">Et vous repartez au bon endroit.</h1>
+    <p class="abs lead">Un clic vous emmène sur le site officiel, vérifié par Virio.</p>
+    <div class="browser win">
+      <div class="browser-bar">
+        <div class="dots"><i></i><i></i><i></i></div>
+        <div class="url ok-url"><i data-ic="lock"></i>antai.gouv.fr</div>
+        <div class="ext"><img src="../../../logo/virio-symbole-plein.svg" alt="" /></div>
+      </div>
+      <div class="page">
+        <div class="of-head"><b>Site officiel</b><span>Paiement des amendes</span></div>
+        <div class="of-title">Payer une amende</div>
+        <div class="of-sub">Munissez-vous de votre avis de contravention.</div>
+        <div class="field">Numéro de télépaiement</div>
+        <div class="btn">Continuer</div>
+        <div class="toast"><img src="../../../logo/virio-symbole.svg" alt="" /><div><b>Site officiel vérifié</b><span>Virio confirme cette adresse</span></div></div>
+      </div>
+    </div>
+    <script src="../kit.js"></script>
+  </body>
+</html>
